@@ -8,4 +8,3 @@ https://ia801509.us.archive.org/zip_dir.php?path=/12/items/dreamcast_tings.zip
 https://ia801404.us.archive.org/zip_dir.php?path=/6/items/megadrive_games_2000_raspi.zip
 https://ia601402.us.archive.org/zip_dir.php?path=/28/items/saturn_games_2000_raspi.zip
 https://ia601406.us.archive.org/zip_dir.php?path=/24/items/n64_games_2000_raspi.zip
-https://ia801501.us.archive.org/zip_dir.php?path=/10/items/pspraspigames.zip
