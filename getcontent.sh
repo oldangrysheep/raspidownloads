@@ -1,4 +1,4 @@
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/downloads.txt
-sudo wget downloads.txt
-sudo unzip -i *.zip
+sudo wget -i downloads.txt
+sudo unzip "*.zip*
 exit
