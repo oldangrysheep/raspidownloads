@@ -3,5 +3,7 @@ clear
 wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlistall.txt -B 'http://archive.org/download/'
 sudo rm -r itemlistall.txt
 sudo rm -r index.html
+rm -r 06
 clear
 sudo unzip *.zip
+sudo rm -r *.zip
