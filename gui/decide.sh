@@ -1,3 +1,5 @@
+whiptail --title "How To Use" --msgbox "Click ok on every system you want then click download" 8 45
+
 function advancedMenu {
     ADVSEL=$(whiptail --title "Decide What Systems You Want" --fb --menu "Choose an option" 15 60 4 \
         "1" "Nintendo Entertainment System" \
