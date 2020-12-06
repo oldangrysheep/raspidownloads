@@ -31,7 +31,6 @@ COMMENT
 COMMENT
 
 
-clear
 
 backup_dir="backup"         #The directory that has/will have the backups
 working_dir="working"       #The directory that is to be backed up
