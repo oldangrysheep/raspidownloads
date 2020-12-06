@@ -33,7 +33,7 @@ function advancedMenu {
             echo "Option 2"
             wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/decide.sh
             sudo chmod +x decide.sh
-            sh decide.sh
+            sudo sh decide.sh
             rm -r decide.sh
             sudo sh downloader.sh
         ;;
