@@ -14,7 +14,8 @@ read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
     wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/getcontent.sh
     sudo chmod +x getcontent.sh
-    sudo ./getcontent.sh
+    echo "Were about to start the deciding process"
+    sh ./getcontent.sh
 else
     echo No
 fi
