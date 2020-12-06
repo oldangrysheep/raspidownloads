@@ -11,3 +11,4 @@ https://ia601406.us.archive.org/zip_dir.php?path=/24/items/n64_games_2000_raspi.
 https://ia801502.us.archive.org/29/items/psx_gamescollection/psx%20all%20games.zip
 https://archive.org/download/psp_temporary/mnt/NAS/raspi/psp/
 https://ia601500.us.archive.org/zip_dir.php?path=/25/items/nds_games_2000_raspi.zip
+https://archive.org/download/ps-3-disc/ps3/
