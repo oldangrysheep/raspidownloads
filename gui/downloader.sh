@@ -16,7 +16,7 @@ if ! [ -x "$(command -v fim)" ]; then
   sudo apt-get install fim -y
 fi
 
-sudo rm -r downloader.sh
+sudo rm -r *
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
 sudo chmod +x downloader.sh
 sudo mkdir -p /home/pi/RomDownloader/Temp
@@ -40,10 +40,10 @@ function advancedMenu {
         ;;
         2)
             echo "Option 2"
-            wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/decide.sh
+            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/decide.sh
             sudo chmod +x decide.sh
             sudo sh decide.sh
-            rm -r decide.sh
+            sudo rm -r decide.sh
             
             sudo sh downloader.sh
         ;;
