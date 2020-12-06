@@ -115,7 +115,7 @@ fi
 
 sudo wget -i downloads.txt
 sleep 5
-sudo unzip *.zip
+7z e *.zip
 sudo rm -r downloads.txt
 sudo rm -r getcontent.sh
 
