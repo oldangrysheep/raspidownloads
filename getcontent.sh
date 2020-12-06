@@ -131,7 +131,7 @@ else
     echo No
 fi
 
-sudo wget -i nes.txt gameboy.txt
+sudo wget -i downloads.txt
 
 fi
 sudo unzip *.zip
