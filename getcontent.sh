@@ -64,14 +64,6 @@ else
     echo No
 fi
 
-    echo -n "Do You want to download all Nintendo Entertainment Sytstem (NES) Roms Y/N"
-read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "https://ia801402.us.archive.org/zip_dir.php?path=/13/items/nes_games_2000_raspi.zip" >> downloads.txt
-else
-    echo No
-fi
-
     echo -n "Do You want to download all Playstation 3 roms y/n? (Not Reccomended 100+ Gigabytes & not playable on raspi "
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
