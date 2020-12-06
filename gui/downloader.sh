@@ -5,6 +5,11 @@ if ! [ -x "$(command -v whiptail)" ]; then
   sudo apt-get install whiptail -y
 fi
 
+if ! [ -x "$(command -v dialog)" ]; then
+  echo "Just installing Dependancies" 
+  sudo apt-get install dialog -y
+fi
+
 sudo rm -r downloader.sh
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
 sudo chmod +x downloader.sh
