@@ -24,7 +24,7 @@ function advancedMenu {
         ;;
         3)
             echo "Option 3"
-            whiptail --title "Option 1" --msgbox "You chose option 3. Exit status $?" 8 45
+            exit
         ;;
     esac
 }
