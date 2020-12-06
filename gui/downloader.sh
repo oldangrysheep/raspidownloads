@@ -12,7 +12,7 @@ function download {
 	{
     wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/downloads.txt -p /home/ubuntu | whiptail --gauge "Downloading List" 6 60 0
     sudo rm -r downloads.txt
-    end function
+    
 }
 
 
