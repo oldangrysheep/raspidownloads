@@ -1,13 +1,13 @@
+virtualboy_games_2000_raspi
+nes_games_2000_raspi
+gameboy_games_2000_raspi
 psx_gamescollection
 psp_temporary
 dreamcast_tings
 megadrive_games_2000_raspi
-virtualboy_games_2000_raspi
 saturn_games_2000_raspi
 n64_games_2000_raspi
 snes_games_2000_raspi
-gameboy_games_2000_raspi
 gba_games_2000_raspi
 gbc_games_2000_raspi
 nds_games_2000_raspi
-nes_games_2000_raspi
