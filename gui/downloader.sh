@@ -42,6 +42,7 @@ function advancedMenu {
             echo "Option 2"
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/decide.sh
             sudo chmod +x decide.sh
+            wait 5
             sudo sh decide.sh
             sudo rm -r decide.sh
             
