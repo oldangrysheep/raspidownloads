@@ -18,7 +18,8 @@ function advancedMenu {
         "14" "Download All Selected" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
-            exit
+            echo "nes_games_2000_raspi" >> itemlist.txt
+            sudo sh ./decide.sh
         ;;
         2)
             exit
@@ -58,7 +59,7 @@ function advancedMenu {
             exit
         ;;
         14)
-            exit
+            sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
         ;;
     esac
 }
