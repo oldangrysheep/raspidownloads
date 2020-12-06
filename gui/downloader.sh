@@ -11,6 +11,11 @@ if ! [ -x "$(command -v dialog)" ]; then
   sudo apt-get install dialog -y
 fi
 
+if ! [ -x "$(command -v fim)" ]; then
+  echo "Just installing Dependancies" 
+  sudo apt-get install fim -y
+fi
+
 sudo rm -r downloader.sh
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
 sudo chmod +x downloader.sh
