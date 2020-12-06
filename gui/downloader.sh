@@ -8,43 +8,6 @@ sudo rm -r downloader.sh
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
 sudo chmod +x downloader.sh
 
-function download {
-	{
-    wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/downloads.txt -p /home/ubuntu | whiptail --gauge "Downloading List" 6 60 0
-    sudo rm -r downloads.txt
-    
-}
-
-
-
-function decide {
-	{
-	  echo "yes"
-	}
-}
-
-
-
-while [ 1 ]
-do
-CHOICE=$(
-whiptail --title "Backup program" --menu "Make your choice" 16 100 9 \
-	"1)" "Download Whole Rom Library"  \
-	"2)" "Recover your files."  \
-	"9)" "End script"  3>&2 2>&1 1>&3
-)
-
-
-case $CHOICE in
-	"1)")
-		download
-	;;
-	"2)")
-	  decide
-	;;
-
-	"9)") exit
-        ;;
-esac
-done
-exit
+whiptail \
+    --title "Intresting" \
+    --msgbox "I am a humble messagebox." 8 45
