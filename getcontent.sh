@@ -17,7 +17,8 @@ fi
     echo -n "Do You want to download all gameboy roms y/n?"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "https://archive.org/download/gameboy_games_2000_raspi/media/sf_V_DRIVE/gb/" >> downloads.txt
+    wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B https://archive.org/download/gameboy_games_2000_raspi/media/sf_V_DRIVE/gb/
+    echo "I gotta fix this so oopsie and ignore this"
 else
     echo No
 fi
