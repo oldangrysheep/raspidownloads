@@ -13,6 +13,7 @@ echo -n "Do You want to decide which roms you get??"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
     wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/getcontent.sh
+    sudo chmod +x getcontent.sh
     sudo ./getcontent.sh
 else
     echo No
