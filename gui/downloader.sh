@@ -19,7 +19,6 @@ fi
 
 sudo mkdir -p /home/pi/RomDownloader/Temp
 cd /home/pi/RomDownloader/Temp
-sudo rm -r *
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
 sudo chmod +x downloader.sh
 
