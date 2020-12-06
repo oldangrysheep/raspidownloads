@@ -11,7 +11,7 @@ else
     echo -n "Do You want to download all nes roms y/n?"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
-    wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/downloads/nes.txt
+    echo "https://ia801402.us.archive.org/zip_dir.php?path=/13/items/nes_games_2000_raspi.zip" >> downloads.txt
 else
     echo No
 fi
@@ -19,7 +19,7 @@ fi
     echo -n "Do You want to download all dreamcast roms y/n?"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
-    wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/downloads/dreamcast.txt
+    echo "https://ia801509.us.archive.org/zip_dir.php?path=/12/items/dreamcast_tings.zip" >> downloads.txt
 else
     echo No
 fi
