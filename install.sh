@@ -1,3 +1,9 @@
+if ! command -v vim &> /dev/null
+then
+    sudo apt-get install fim
+    exit
+fi
+
 echo -n "Do You want to download all roms?"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
