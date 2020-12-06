@@ -38,25 +38,10 @@ working_dir="working"       #The directory that is to be backed up
 recovery_dir="recovery"     #The directory where you want your recovery to be copied to
 temp_dir="temp"             #A temp directory that the script needs
 
-function backup {
+function download {
 	{
-    new_backup=B$(date +"%Y%m%d%H%M%S")
-    if [ "$(ls -A $backup_dir)" ]; then
-        mkdir $new_backup
-        rsync -a  $working_dir"/" $temp_dir
-        for entry in "$backup_dir"/*
-        do
-          rm -r $new_backup
-          rsync -a  --compare-dest=../$entry/ $temp_dir/ $new_backup
-          rm -r $temp_dir
-          rsync -a $new_backup/ $temp_dir
-        done
-        mv $new_backup $backup_dir/$new_backup
-        rm -r $temp_dir
-    else
-        rsync -av  $working_dir"/" backup/$new_backup
-    fi
-	} | whiptail --gauge "Backing up data ..." 6 60 0
+    wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/downloads.txt -p /home/ubuntu | whiptail --gauge "Downloading List" 6 60 0
+    sudo rm -r downloads.txt
 }
 
 
@@ -84,7 +69,7 @@ while [ 1 ]
 do
 CHOICE=$(
 whiptail --title "Backup program" --menu "Make your choice" 16 100 9 \
-	"1)" "Backup your files."   \
+	"1)" "Download Whole Rom Library"  \
 	"2)" "Recover your files."  \
 	"9)" "End script"  3>&2 2>&1 1>&3
 )
@@ -92,10 +77,10 @@ whiptail --title "Backup program" --menu "Make your choice" 16 100 9 \
 
 case $CHOICE in
 	"1)")
-		backup
+		download
 	;;
 	"2)")
-	  recovery
+	  decide
 	;;
 
 	"9)") exit
