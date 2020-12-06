@@ -1,5 +1,4 @@
 
-echo "yes"
 function advancedMenu {
     ADVSEL=$(whiptail --title "Decide What Systems You Want" --fb --menu "Choose an option" 15 60 4 \
         "1" "Nintendo Entertainment System" \
@@ -28,6 +27,33 @@ function advancedMenu {
         ;;
         4)
             echo yeet
+        ;;
+        5)
+            exit
+        ;;
+        6)
+            exit
+        ;;
+        7)
+            exit
+        ;;
+        8)
+            exit
+        ;;
+        9)
+            exit
+        ;;
+        10)
+            exit
+        ;;
+        11)
+            exit
+        ;;
+        12)
+            exit
+        ;;
+        13)
+            exit
     esac
 }
 advancedMenu
