@@ -17,9 +17,9 @@ function download {
 
 
 
-function recovery {
+function decide {
 	{
-	  exit
+	  end function
 	}
 }
 
