@@ -1,10 +1,7 @@
-
-    wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/downloads.txt
-  for i in $(seq 1 100)
-do
-    sleep 0.1 
-    echo $i
-done | whiptail --title 'Downloading Roms' --gauge 'Downloading Roms...' 6 60 0
-    sudo wget -i downloads.txt
-    sudo rm -r downloads.txt
-    sudo unzip *.zip
+wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/downloads.txt
+URL="downloads.txt"
+wget -i "$URL" 2>&1 | \
+ stdbuf -o0 awk '/[.] +[0-9][0-9]?[0-9]?%/ { print substr($0,63,3) }' | \
+ dialog --gauge "Download Test" 10 100
+sudo rm -r downloads.txt
+sudo unzip *.zip
