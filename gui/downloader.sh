@@ -26,7 +26,7 @@ whiptail --title "Operative Systems" --menu "Make your choice" 16 100 9 \
 result=$(whoami)
 case $CHOICE in
 	"1)")   
-		result="I am $result, the name of the script is start"
+		echo "hoe"
 	;;
 	"2)")   
 	        OP=$(uptime | awk '{print $3;}')
@@ -58,5 +58,3 @@ case $CHOICE in
         ;;
 esac
 whiptail --msgbox "$result" 20 78
-done
-exit
