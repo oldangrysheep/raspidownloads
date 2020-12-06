@@ -14,7 +14,8 @@ function advancedMenu {
         "10" "Sega Saturn" \
         "11" "Sega Dreamcast" \
         "12" "Playstation 1" \
-        "13" "Playstation Portable" 3>&1 1>&2 2>&3)
+        "13" "Playstation Portable" \
+        "14" "Download All Selected" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
             exit
@@ -54,6 +55,9 @@ function advancedMenu {
             exit
         ;;
         13)
+            exit
+        ;;
+        14)
             exit
         ;;
     esac
