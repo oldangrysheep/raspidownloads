@@ -61,7 +61,7 @@ function advancedMenu {
         14)
             sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
             sudo unzip *.zip
-            sudo rm -r itemlist.txt
+            
         ;;
     esac
 }
