@@ -32,11 +32,6 @@ COMMENT
 
 
 
-backup_dir="backup"         #The directory that has/will have the backups
-working_dir="working"       #The directory that is to be backed up
-recovery_dir="recovery"     #The directory where you want your recovery to be copied to
-temp_dir="temp"             #A temp directory that the script needs
-
 function download {
 	{
     wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/downloads.txt -p /home/ubuntu | whiptail --gauge "Downloading List" 6 60 0
@@ -47,19 +42,8 @@ function download {
 
 function recovery {
 	{
-	  if [ "$(ls -A $backup_dir)" ]; then
-    mkdir $temp_dir
-    for entry in "$backup_dir"/*
-    do
-      rsync -av  --compare-dest=../$temp_dir/ $entry/ $recovery_dir
-      rm -r $temp_dir
-      rsync -av $recovery_dir/ $temp_dir/
-      done
-      rm -r $temp_dir
-    else
-      echo "No backup found"
-    fi
-	} | whiptail --gauge "Recovering data ..." 6 60 0
+	  exit
+	}
 }
 
 
