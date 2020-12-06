@@ -1,4 +1,4 @@
-advancedMenu () {
+function advancedMenu {
     ADVSEL=$(whiptail --title "Decide What Systems You Want" --fb --menu "Choose an option" 15 60 4 \
         "1" "Nintendo Entertainment System" \
         "2" "Super Nintendo Entertainemnt System" \
