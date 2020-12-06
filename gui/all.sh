@@ -6,6 +6,6 @@
 do
     sleep 0.1 
     echo $i
-done | whiptail --title 'Test script' --gauge 'Running...' 6 60 0
+done | whiptail --title 'Downloading Roms' --gauge 'Downloading...' 6 60 0
     sudo rm -r downloads.txt
     sudo unzip *.zip
