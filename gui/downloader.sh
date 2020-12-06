@@ -55,3 +55,5 @@ function advancedMenu {
 }
 advancedMenu
 
+sudo rm -r itemlist.txt
+exit
