@@ -8,34 +8,11 @@ sudo rm -r downloader.sh
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
 sudo chmod +x downloader.sh
 
-
-
-
-<<COMMENT
-  WARNING DO NOT USE THIS SCRIPT ON SOMETHING IMPORTANT.
-  IT MAY NOT BE SAFE FOR ONE REASON.
-  1) I AM NOT AN EXPERT AT BASH SCRIPTING.
-  Please i dont want you to mess up your files.
-COMMENT
-
-<<COMMENT
-  If you still wish to use it. note the following things:
-  1) Do not put your script into any of the dirs.
-  2) You need to edit the directory variables so as to
-     fit them to your using.
-     Right now the script presumes that the script is
-     in the same directory as the backup, working and recovery
-     directory.
-  Now feel free to play around or fork it to improve it. cheers :)
-  Feedback is highly welcomed :)
-COMMENT
-
-
-
 function download {
 	{
     wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/downloads.txt -p /home/ubuntu | whiptail --gauge "Downloading List" 6 60 0
     sudo rm -r downloads.txt
+    end function
 }
 
 
