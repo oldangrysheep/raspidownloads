@@ -10,7 +10,7 @@ sudo chmod +x downloader.sh
 
 function advancedMenu {
     ADVSEL=$(whiptail --title "Advanced Menu" --fb --menu "Choose an option" 15 60 4 \
-        "1" "Download All Roms" \
+        "1" "Download All Roms (Not Recomended 100+ Gigabytes" \
         "2" "Select Roms and Download" \
         "3" "Exit" 3>&1 1>&2 2>&3)
     case $ADVSEL in
