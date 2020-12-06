@@ -1,6 +1,5 @@
 sudo rm -r downloads.txt
 sudo rm -r getcontent.sh
-sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/getcontent.sh
 chmod +x getcontent.sh
 echo -n "Do You want to download all nes roms y/n?"
 read answer
