@@ -20,6 +20,7 @@ function advancedMenu {
             wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/all.sh
             sh all.sh
             rm -r all.sh
+            sh downloader.sh
         ;;
         2)
             echo "Option 2"
