@@ -24,13 +24,18 @@ function advancedMenu {
             echo "Option 1"
             whiptail --title "Downloading All Roms" --msgbox "About to Start Downloading" 8 45
             wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/all.sh
+            sudo chmod +x all.sh
             sudo sh all.sh
             rm -r all.sh
             sudo sh downloader.sh
         ;;
         2)
             echo "Option 2"
-            whiptail --title "Option 1" --msgbox "You chose option 2. Exit status $?" 8 45
+            wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/decide.sh
+            sudo chmod +x decide.sh
+            sh decide.sh
+            rm -r decide.sh
+            sudo sh downloader.sh
         ;;
         3)
             echo "Option 3"
