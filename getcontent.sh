@@ -135,5 +135,7 @@ sudo wget -i nes.txt gameboy.txt
 
 fi
 sudo unzip *.zip
+sudo rm -r downloads.txt
+
 exit
 
