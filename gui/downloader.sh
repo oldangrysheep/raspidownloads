@@ -16,11 +16,11 @@ if ! [ -x "$(command -v fim)" ]; then
   sudo apt-get install fim -y
 fi
 
-sudo mkdir -p /home/pi/RomDownloader/Temp
-cd /home/pi/RomDownloader/Temp
 sudo rm -r downloader.sh
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
 sudo chmod +x downloader.sh
+sudo mkdir -p /home/pi/RomDownloader/Temp
+cd /home/pi/RomDownloader/Temp
 
 function advancedMenu {
     ADVSEL=$(whiptail --title "Rom Downloader" --fb --menu "Choose an option" 15 60 4 \
