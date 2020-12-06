@@ -9,10 +9,7 @@ function advancedMenu {
         "7" "Nintendo Ds" \
         "8" "Nintendo Virtual Boy" \
         "9" "Megadrive Games" \
-        "10" "Sega Saturn" \ 
-        "11" "Playstation 1" \
-        "12" "Playstation Portable (100+ Gigabytes)" \ 
-        "13" "Sega Dreamcast" 3>&1 1>&2 2>&3)
+        "10" "Sega Saturn" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
             exit
@@ -43,15 +40,6 @@ function advancedMenu {
             exit
         ;;
         10)
-            exit
-        ;;
-        11)
-            exit
-        ;;
-        12)
-            exit
-        ;;
-        13)
             exit
         ;;
     esac
