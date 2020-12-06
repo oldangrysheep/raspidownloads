@@ -27,6 +27,7 @@ function advancedMenu {
             sudo chmod +x all.sh
             sudo sh all.sh
             rm -r all.sh
+            clear
             sudo sh downloader.sh
         ;;
         2)
@@ -35,15 +36,14 @@ function advancedMenu {
             sudo chmod +x decide.sh
             sudo sh decide.sh
             rm -r decide.sh
+            clear
             sudo sh downloader.sh
         ;;
         3)
             echo "Option 3"
-            exit
+            clear
         ;;
     esac
 }
 advancedMenu
 
-
-clear
