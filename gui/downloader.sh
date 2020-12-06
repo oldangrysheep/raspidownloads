@@ -18,9 +18,9 @@ function advancedMenu {
             echo "Option 1"
             whiptail --title "Downloading All Roms" --msgbox "About to Start Downloading" 8 45
             wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/all.sh
-            sh all.sh
+            sudo sh all.sh
             rm -r all.sh
-            sh downloader.sh
+            sudo sh downloader.sh
         ;;
         2)
             echo "Option 2"
