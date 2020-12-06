@@ -5,7 +5,7 @@ fi
 
 if ! [ -x "$(command -v 7z)" ]; then
   echo "Just installing Dependancies" 
-  sudo apt-get install 7z -y
+  sudo apt-get install p7zip-full -y
 fi
 
 echo -n "Do You want to download all roms?"
