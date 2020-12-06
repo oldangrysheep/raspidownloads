@@ -1,4 +1,5 @@
 #This is all setup stuff to make sure its all ready
+# https://www.bradgillap.com/guide/post/bash-gui-whiptail-menu-tutorial-series-1 
 if ! [ -x "$(command -v whiptail)" ]; then
   echo "Just installing Dependancies" 
   sudo apt-get install whiptail -y
