@@ -7,5 +7,5 @@
  #   sleep 0.1 
 #    echo $i
 #done | whiptail --title 'Downloading Roms' --gauge 'Downloading...' 6 60 0
-    sudo rm -r downloads.txt
+    #sudo rm -r downloads.txt
     sudo unzip *.zip
