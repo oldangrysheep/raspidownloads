@@ -64,13 +64,6 @@ else
     echo No
 fi
 
-    echo -n "Do You want to download all Playstation 3 roms y/n? (Not Reccomended 100+ Gigabytes & not playable on raspi "
-read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "https://archive.org/download/ps-3-disc/ps3/" >> downloads.txt
-else
-    echo No
-fi
 
     echo -n "Do You want to download all Playstation Portable roms y/n?"
 read answer
