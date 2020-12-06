@@ -1,7 +1,7 @@
 
     wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/downloads.txt
   
-    sudo wget downloads.txt 
+    sudo wget -i downloads.txt 
     #for i in $(seq 1 100)
 #do
  #   sleep 0.1 
