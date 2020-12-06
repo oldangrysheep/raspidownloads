@@ -1,4 +1,5 @@
 #This is all setup stuff to make sure its all ready
+#add this when extracting https://www.mexchip.com/en/2010/10/how-to-show-a-progress-bar-when-extracting-a-file/
 # https://www.bradgillap.com/guide/post/bash-gui-whiptail-menu-tutorial-series-1 
 if ! [ -x "$(command -v whiptail)" ]; then
   echo "Just installing Dependancies" 
