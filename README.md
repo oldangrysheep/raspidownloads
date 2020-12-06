@@ -6,7 +6,9 @@ You can install it by
 2. enter the following commands
 
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/install.sh
+
 sudo chmod +x install.sh 
+
 sudo ./install.sh
 
 3. reboot and enter the configuration and youll see it there c:
