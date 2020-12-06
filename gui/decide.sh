@@ -54,6 +54,7 @@ function advancedMenu {
         ;;
         13)
             exit
+        ;;
     esac
 }
 advancedMenu
