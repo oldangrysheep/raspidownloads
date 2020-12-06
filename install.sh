@@ -1,6 +1,11 @@
 if ! [ -x "$(command -v fim)" ]; then
   echo "Just installing Dependancies" 
-  sudo apt-get install fim
+  sudo apt-get install fim -y
+fi
+
+if ! [ -x "$(command -v 7z)" ]; then
+  echo "Just installing Dependancies" 
+  sudo apt-get install 7z -y
 fi
 
 echo -n "Do You want to download all roms?"
