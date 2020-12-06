@@ -19,7 +19,7 @@ function download {
 
 function decide {
 	{
-	  ping google.com
+	  echo "yes"
 	}
 }
 
