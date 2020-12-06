@@ -8,7 +8,7 @@ sudo rm -r downloader.sh
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
 sudo chmod +x downloader.sh
 
-function advancedMenu() {
+function advancedMenu {
     ADVSEL=$(whiptail --title "Advanced Menu" --fb --menu "Choose an option" 15 60 4 \
         "1" "Option 1" \
         "2" "Option 2" \
