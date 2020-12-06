@@ -1,6 +1,6 @@
 if ! [ -x "$(command -v fim)" ]; then
-  echo 'Error: git is not installed.' >&2
-  exit 1
+  echo "Just installing Dependancies" 
+  sudo apt-get install fim
 fi
 
 echo -n "Do You want to download all roms?"
