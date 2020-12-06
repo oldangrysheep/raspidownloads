@@ -16,7 +16,7 @@ if ! [ -x "$(command -v fim)" ]; then
   sudo apt-get install fim -y
 fi
 
-sudo rm -r *
+sudo rm -r /home/pi/RomDownloader/Temp/*
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
 sudo chmod +x downloader.sh
 sudo mkdir -p /home/pi/RomDownloader/Temp
