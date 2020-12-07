@@ -17,8 +17,6 @@ if ! [ -x "$(command -v fim)" ]; then
 fi
 
 cd /home/pi/RomDownloader/Temp
-sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
-sudo chmod +x downloader.sh
 
 function advancedMenu {
     ADVSEL=$(whiptail --title "Rom Downloader" --fb --menu "Choose an option" 15 60 4 \
@@ -58,5 +56,4 @@ function advancedMenu {
 }
 advancedMenu
 
-sudo rm -r itemlist.txt
 exit
