@@ -48,13 +48,9 @@ function advancedMenu {
             sudo sh downloader.sh
         ;;
         3)
-            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/gamelist.sh
-            sudo chmod +x gamelist.sh
-            cd /home/pi/RomDownloader/Temp/Roms
+            wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/setup.sh
+            sudo sh ./setup.sh
             #wget insert here
-            cd /home/pi/RomDownloader/Temp
-            sudo bash ./gamelist.sh
-            sudo rm -r gamelist.sh
         ;;
         4)
             for i in {1..100}; do
