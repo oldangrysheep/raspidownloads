@@ -36,11 +36,11 @@ function advancedMenu {
         ;;
         2)
             echo "Option 2"
-            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/decide.sh
-            sudo chmod +x decide.sh
+            sudo https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/decide2.sh
+            sudo chmod +x decide2.sh
             wait 5
-            sudo sh ./decide.sh
-            sudo rm -r decide.sh
+            sudo sh ./decide2.sh
+            sudo rm -r decide2.sh
             
             sudo sh downloader.sh
         ;;
