@@ -21,7 +21,7 @@ sudo mkdir -p /home/pi/RomDownloader/Temp/Roms
 cd /home/pi/RomDownloader/Temp
 
 function advancedMenu {
-    ADVSEL=$(whiptail --title "Rom Downloader" --fb --menu "Choose an option" 15 60 4 \
+    ADVSEL=$(whiptail --title "Rom Downloader" --menu "Choose an option" 15 60 4 \
         "1" "Download All Roms (Not Recomended 100+ Gigabytes)" \
         "2" "Select Roms and Download" \
         "3" "Download Specfic Games" \
