@@ -97,7 +97,8 @@ if [ $exitstatus -eq 0 ]; then
         echo "Variables can be used in command execution"
     fi
 else
-    echo "User Pressed Cancel. with No File Selected."
+    cd /home/pi/RomDownloader/Temp
+    sudo sh ./downloader.sh
 fi
 echo ""
 echo "This is demo code that can be used in your own projects"
