@@ -1,4 +1,4 @@
- declare -a array
+VAR=(list) 
 
  i=1 #Index counter for adding to array
  j=1 #Option menu value generator
