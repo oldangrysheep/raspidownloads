@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
  #usage: Dynamic_Menu.bash /home/user/target_directory
 
  declare -a array
