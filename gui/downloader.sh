@@ -53,10 +53,7 @@ function advancedMenu {
             #wget insert here
         ;;
         4)
-            for i in {1..100}; do
-   echo $i
-   sleep 0.1
-done | whiptail --gauge "Cleaning Up..." 10 50 0
+            cd /home/pi/RomDownloader/Temp
             sudo rm -r *
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
             sudo chmod +x downloader.sh
