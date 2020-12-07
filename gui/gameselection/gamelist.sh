@@ -53,7 +53,7 @@ function Filebrowser
             if (whiptail --title "Confirm Selection" --yesno "DirPath : $curdir\nFileName: $selection" 0 0 \
                          --yes-button "Confirm" \
                          --no-button "Retry"); then
-                filename="$selection"
+                sh ./"$selection"
                 filepath="$curdir"    # Return full filepath  and filename as selection variables
             else
                 Filebrowser "$1" "$curdir"
