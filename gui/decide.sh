@@ -41,16 +41,20 @@ function advancedMenu {
             exit
         ;;
         7)
-            exit
+            echo "https://archive.org/download/gb_20201207/games/nds.zip" >> itemlist.txt
+            sudo sh ./decide.sh
         ;;
         8)
-            exit
+            echo "https://archive.org/download/gb_20201207/games/virtualboy.zip" >> itemlist.txt
+            sudo sh ./decide.sh
         ;;
         9)
-            exit
+            echo "https://archive.org/download/gb_20201207/games/megadrive.zip" >> itemlist.txt
+            sudo sh ./decide.sh
         ;;
         10)
-            exit
+            echo "https://archive.org/download/gb_20201207/games/saturn.zip" >> itemlist.txt
+            sudo sh ./decide.sh
         ;;
         11)
             exit
