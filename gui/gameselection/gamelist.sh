@@ -7,7 +7,7 @@ This sample code can be used in a script menu to perform an operation that
 requires selecting a file.
 '
 
-startdir="/home/pi/RomDownloader/Temp/"
+startdir="/home/pi/RomDownloader/Temp/Roms/"
 filext='sh'
 menutitle="Game Selection Menu"
 
