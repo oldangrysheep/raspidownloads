@@ -51,7 +51,7 @@ function Filebrowser
                          --yes-button "Confirm" \
                          --no-button "Retry"); then
                 sh ./"$selection"
-                filepath="$curdir"    # Return full filepath  and filename as selection variables
+                exit    # Return full filepath  and filename as selection variables
             else
                 Filebrowser "$1" "$curdir"
             fi
