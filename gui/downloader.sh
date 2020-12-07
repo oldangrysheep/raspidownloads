@@ -16,8 +16,8 @@ if ! [ -x "$(command -v fim)" ]; then
   sudo apt-get install fim -y
 fi
 
-sudo mkdir /home/pi/RomDownloader/Temp
-sudo mkdir /home/pi/RomDownloader/Temp/Roms
+sudo mkdir -p /home/pi/RomDownloader/Temp
+sudo mkdir -p /home/pi/RomDownloader/Temp/Roms
 cd /home/pi/RomDownloader/Temp
 
 function advancedMenu {
