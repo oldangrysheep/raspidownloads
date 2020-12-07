@@ -50,7 +50,6 @@ function advancedMenu {
         3)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/gamelist.sh
             sudo chmod +x gamelist.sh
-            sudo mkdir /home/pi/RomDownloader/Temp/Roms
             cd /home/pi/RomDownloader/Temp/Roms
             #wget insert here
             cd /home/pi/RomDownloader/Temp
