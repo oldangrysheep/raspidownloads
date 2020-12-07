@@ -9,7 +9,7 @@ requires selecting a file.
 
 startdir="/home/pi/RomDownloader/Temp/"
 filext='sh'
-menutitle="$filext File Selection Menu"
+menutitle="Game Selection Menu"
 
 #------------------------------------------------------------------------------
 function Filebrowser
