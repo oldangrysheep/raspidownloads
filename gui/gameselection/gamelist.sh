@@ -6,7 +6,7 @@ It Returns a filename path if selected.  Esc key exits.
 This sample code can be used in a script menu to perform an operation that
 requires selecting a file.
 '
-cd /home/pi/RomDownloader/Temp/Roms
+
 
 startdir="/home/pi/RomDownloader/Temp/Roms/"
 filext='sh'
