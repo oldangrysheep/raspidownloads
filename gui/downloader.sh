@@ -22,7 +22,8 @@ function advancedMenu {
     ADVSEL=$(whiptail --title "Rom Downloader" --fb --menu "Choose an option" 15 60 4 \
         "1" "Download All Roms (Not Recomended 100+ Gigabytes)" \
         "2" "Select Roms and Download" \
-        "3" "Exit" 3>&1 1>&2 2>&3)
+        "3" "Download Specfic Games" \
+        "4" "Exit" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
             echo "Option 1"
@@ -45,7 +46,12 @@ function advancedMenu {
             sudo sh downloader.sh
         ;;
         3)
-            echo "Option 3"
+            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/gamelist.sh
+            sudo chmod +x gamelist.sh
+            sudo sh ./gamelist.sh
+            sudo rm -r gamelist.sh
+        ;;
+        4)
             for i in {1..100}; do
    echo $i
    sleep 0.1
