@@ -1,4 +1,7 @@
-VAR=(list) 
+#! /bin/bash
+ #usage: Dynamic_Menu.bash /home/user/target_directory
+
+ declare -a array
 
  i=1 #Index counter for adding to array
  j=1 #Option menu value generator
