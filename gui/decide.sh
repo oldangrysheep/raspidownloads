@@ -18,7 +18,7 @@ function advancedMenu {
         "14" "Download All Selected" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
-            echo "nes_games_2000_raspi" >> itemlist.txt
+            echo "https://archive.org/download/gb_20201207/games/nes.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         2)
