@@ -100,5 +100,4 @@ else
     cd /home/pi/RomDownloader/Temp
     sudo sh ./downloader.sh
 fi
-echo ""
-echo "This is demo code that can be used in your own projects"
+
