@@ -36,7 +36,7 @@ function advancedMenu {
         ;;
         2)
             echo "Option 2"
-            sudo https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/decide2.sh
+            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/decide2.sh
             sudo chmod +x decide2.sh
             wait 5
             sudo sh ./decide2.sh
