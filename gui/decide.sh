@@ -22,17 +22,20 @@ function advancedMenu {
             sudo sh ./decide.sh
         ;;
         2)
-            exit
+            echo "https://archive.org/download/gb_20201207/games/snes.zip" >> itemlist.txt
+            sudo sh ./decide.sh
         ;;
         3)
-            echo "Option 3"
-            exit
+            echo "https://archive.org/download/gb_20201207/games/gb.zip" >> itemlist.txt
+            sudo sh ./decide.sh
         ;;
         4)
-            echo yeet
+            echo "https://archive.org/download/gb_20201207/games/gbc.zip" >> itemlist.txt
+            sudo sh ./decide.sh
         ;;
         5)
-            exit
+            echo "https://archive.org/download/gb_20201207/games/gba.zip" >> itemlist.txt
+            sudo sh ./decide.sh
         ;;
         6)
             exit
