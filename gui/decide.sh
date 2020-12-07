@@ -1,4 +1,3 @@
-whiptail --title "How To Use" --msgbox "Click ok on every system you want then click download" 8 45
 
 function advancedMenu {
     ADVSEL=$(whiptail --title "Decide What Systems You Want" --menu "Choose an option" 15 60 4 \
