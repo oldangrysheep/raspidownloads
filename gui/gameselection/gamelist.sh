@@ -1,12 +1,13 @@
-whiptail --backtitle "Welcome to SEUL" --title "Restore Files" \
-    --menu "Please select the file to restore" 14 40 6 "${files[@]}"
-    i=0
-s=65    # decimal ASCII "A" 
-for f in *.tgz
-do
-    # convert to octal then ASCII character for selection tag
-    files[i]=$(echo -en "\0$(( $s / 64 * 100 + $s % 64 / 8 * 10 + $s % 8 ))")
-    files[i+1]="$f"    # save file name
-    ((i+=2))
-    ((s++))
-done
+#!/bin/bash
+file="teste.cfg"
+count=0;
+while IFS=";" read nomeTarefa dirOrigem dirDest tipoBkp agendarBkp compactarBkp gerarLog || [[ -n "$gerarLog" ]]; do #RECEBE NAS VARS OS VALORES DELIMITADOS POR ;
+        count=$((count + 1));#INICIA O COUNT PARA INCREMENTAR O OPTIONS 
+    options[$count]=$count") \"$nomeTarefa\"" #CONCATENA O OPTIONS  
+done < $file ##END READ FILE
+
+options=(${options[@]})
+
+cmd=(dialog --keep-tite --menu "Select options:" 22 76 16)
+
+choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
