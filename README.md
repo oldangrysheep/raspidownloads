@@ -1,5 +1,6 @@
 # raspidownloads
 This is a script that you can use with a controller to download roms.
+It downloads what it needs, moves and cleans up all the remains for you. 
 You can install it by
 
 1. ssh into the pi
