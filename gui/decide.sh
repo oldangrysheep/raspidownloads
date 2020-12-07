@@ -71,6 +71,7 @@ function advancedMenu {
     sudo unzip '*.zip'
     sudo rm -r *.zip
     sudo cp -a /home/pi/RomDownloader/Temp/gb_20201207/games/* cd /home/pi/RetroPie/roms/
+    whiptail --title "Your Downloads Are Done" --msgbox "Please restart emulation station to see the games." 8 45
     cd /home/pi/RomDownloader/Temp
 else
     sudo sh ./decide.sh
