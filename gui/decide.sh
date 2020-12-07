@@ -74,6 +74,10 @@ function advancedMenu {
 done | whiptail --gauge "Extracting Files ..." 10 50 0
     sudo unzip '*.zip'
     sudo rm -r *.zip
+    for i in {1..100}; do
+   echo $i
+   sleep 0.1
+done | whiptail --gauge "Moving Files" 10 50 0
     sudo cp -a /home/pi/RomDownloader/Temp/gb_20201207/games/* cd /home/pi/RetroPie/roms/
     whiptail --title "Your Downloads Are Done" --msgbox "Please restart emulation station to see the games." 8 45
     cd /home/pi/RomDownloader/Temp
