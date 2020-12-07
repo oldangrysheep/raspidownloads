@@ -64,7 +64,10 @@ function advancedMenu {
         14)
             if (whiptail --title "Are You Sure?" --yesno "Yes Will Download, No Will Bring You Back To The Menu." 10 60) then
     sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
+    cd /home/pi/RomDownloader/Temp/gb_20201207/games
     sudo unzip *.zip
+    sudo rm -r *.zip
+    sudo mv /home/pi/RomDownloader/Temp/gb_20201207/games/* cd /home/pi/RomDownloader/Temp/
 else
     sudo sh ./decide.sh
 fi
