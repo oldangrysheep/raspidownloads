@@ -1,4 +1,6 @@
-i=0
+whiptail --backtitle "Welcome to SEUL" --title "Restore Files" \
+    --menu "Please select the file to restore" 14 40 6 "${files[@]}"
+    i=0
 s=65    # decimal ASCII "A" 
 for f in *.tgz
 do
@@ -8,5 +10,3 @@ do
     ((i+=2))
     ((s++))
 done
-whiptail --backtitle "Welcome to SEUL" --title "Restore Files" \
-    --menu "Please select the file to restore" 14 40 6 "${files[@]}"
