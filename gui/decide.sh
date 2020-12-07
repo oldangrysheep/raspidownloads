@@ -68,6 +68,10 @@ function advancedMenu {
             if (whiptail --title "Are You Sure?" --yes-button "Download" --yesno "Yes Will Download, No Will Bring You Back To The Menu." 10 60) then
     sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
     cd /home/pi/RomDownloader/Temp/gb_20201207/games
+    for i in {1..100}; do
+   echo $i
+   sleep 0.1
+done | whiptail --gauge "Extracting Files ..." 10 50 0
     sudo unzip '*.zip'
     sudo rm -r *.zip
     sudo cp -a /home/pi/RomDownloader/Temp/gb_20201207/games/* cd /home/pi/RetroPie/roms/
