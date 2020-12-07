@@ -30,7 +30,7 @@ function advancedMenu {
         1)
             echo "Option 1"
             whiptail --title "Downloading All Roms" --msgbox "About to Start Downloading" 8 45
-            wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/all.sh
+            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/all.sh
             sudo chmod +x all.sh
             sudo sh ./all.sh
             rm -r all.sh
@@ -39,7 +39,7 @@ function advancedMenu {
         ;;
         2)
             echo "Option 2"
-            wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/decide2.sh
+            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/decide2.sh
             sudo chmod +x decide2.sh
             wait 5
             sudo sh ./decide2.sh
@@ -48,7 +48,7 @@ function advancedMenu {
             sudo sh downloader.sh
         ;;
         3)
-            wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/setup.sh
+            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/setup.sh
             sudo sh ./setup.sh
             #wget insert here
         ;;
