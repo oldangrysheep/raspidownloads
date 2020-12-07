@@ -67,7 +67,7 @@ function advancedMenu {
     cd /home/pi/RomDownloader/Temp/gb_20201207/games
     sudo unzip *.zip
     sudo rm -r *.zip
-    sudo mv /home/pi/RomDownloader/Temp/gb_20201207/games/* cd /home/pi/RomDownloader/Temp/
+    sudo mv /home/pi/RomDownloader/Temp/gb_20201207/games/* cd /home/pi/RetroPie/roms/
 else
     sudo sh ./decide.sh
 fi
