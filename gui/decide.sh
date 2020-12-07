@@ -59,8 +59,13 @@ function advancedMenu {
             exit
         ;;
         14)
-            sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
-            sudo unzip *.zip
+            if (whiptail --title "Are You Sure?" --yesno "Choose between Yes and No." 10 60) then
+    sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -i ./itemlist.txt -B 'http://archive.org/download/'
+    sudo unzip *.zip
+else
+    sudo sh ./decide.sh
+fi
+            
             
         ;;
     esac
