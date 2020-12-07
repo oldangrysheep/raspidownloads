@@ -46,7 +46,7 @@ function Filebrowser
           Filebrowser "$1" "$selection"
        elif [[ -f "$selection" ]]; then  # Check if File Selected
           if [[ $selection == *$filext ]]; then   # Check if selected File has .jpg extension
-            if (whiptail --title "Confirm Selection" --yesno "DirPath : $curdir\nFileName: $selection" 0 0 \
+            if (whiptail --title "Confirm Selection" --yesno "Game Console : $curdir\nGame Selection: $selection" 0 0 \
                          --yes-button "Confirm" \
                          --no-button "Retry"); then
                 sh ./"$selection"
