@@ -11,8 +11,8 @@ requires selecting a file.
 
 '
 
-startdir="/home/pi"
-filext='jpg'
+startdir="/home/pi/RomDownloader/Temp/"
+filext='sh'
 menutitle="$filext File Selection Menu"
 
 #------------------------------------------------------------------------------
