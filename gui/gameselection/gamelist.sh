@@ -1,12 +1,31 @@
-file="teste.cfg"
-count=0;
-while IFS=";" read nomeTarefa dirOrigem dirDest tipoBkp agendarBkp compactarBkp gerarLog || [[ -n "$gerarLog" ]]; do #RECEBE NAS VARS OS VALORES DELIMITADOS POR ;
-        count=$((count + 1));#INICIA O COUNT PARA INCREMENTAR O OPTIONS 
-    options[$count]=$count") \"$nomeTarefa\"" #CONCATENA O OPTIONS  
-done < $file ##END READ FILE
+ declare -a array
 
-options=(${options[@]})
+ i=1 #Index counter for adding to array
+ j=1 #Option menu value generator
 
-cmd=(dialog --keep-tite --menu "Select options:" 22 76 16)
+ while read line
+ do     
+    array[ $i ]=$j
+    (( j++ ))
+    array[ ($i + 1) ]=$line
+    (( i=($i+2) ))
 
-choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+ done < <(find $1 -type f) #consume file path provided as argument
+
+ #Define parameters for menu
+ TERMINAL=$(tty) #Gather current terminal session for appropriate redirection
+ HEIGHT=20
+ WIDTH=76
+ CHOICE_HEIGHT=16
+ BACKTITLE="Back_Title"
+ TITLE="Dynamic Dialog"
+ MENU="Choose a file:"
+
+ #Build the menu with variables & dynamic content
+ CHOICE=$(dialog --clear \
+                 --backtitle "$BACKTITLE" \
+                 --title "$TITLE" \
+                 --menu "$MENU" \
+                 $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                 "${array[@]}" \
+                 2>&1 >$TERMINAL)
