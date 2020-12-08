@@ -21,7 +21,8 @@ sudo mkdir -p psx
 sudo mkdir -p psp
 cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/nes.zip
-sudo unzip nes.zip sudo rm -r *.zip
+sudo unzip nes.zip 
+sudo rm -r *.zip
 cd /home/pi/RomDownloader/Temp/Roms/
 sudo mkdir -p nes
 sudo mkdir -p snes
