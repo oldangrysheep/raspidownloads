@@ -49,8 +49,6 @@ function Filebrowser
                 filename="$selection"
                 filepath="$curdir" 
                 sudo sh ./"$selection"
-                cd /home/pi/RomDownloader/Temp/
-                sudo sh gamelist.sh  # Return full filepath  and filename as selection variables
             else
                 Filebrowser "$1" "$curdir"
             fi
@@ -75,8 +73,6 @@ exitstatus=$?
 if [ $exitstatus -eq 0 ]; then
     if [ "$selection" == "" ]; then
         echo "User Pressed Esc with No File Selection"
-        cd /home/pi/RomDownloader/Temp/
-        sudo sh gamelist.sh
     else
         whiptail --title "File was selected" --msgbox " \
 
