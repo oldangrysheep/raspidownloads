@@ -21,7 +21,7 @@ sudo mkdir -p psx
 sudo mkdir -p psp
 git clone 
 cd /home/pi/RomDownloader/Temp/Roms/
-sudo git clone https://github.com/oldangrysheep/raspidownloads.git
+git clone https://github.com/oldangrysheep/raspidownloads.git
 sudo mv /home/pi/RomDownloader/Temp/Roms/raspidownloads/roms/* /home/pi/RomDownloader/Temp/Roms/
 sudo rm -r raspidownloads
 sudo chmod -R +x *.sh
