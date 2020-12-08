@@ -1,7 +1,6 @@
 #!/bin/bash
 
 : '
-                   filebrowse.sh written by Claude Pageau
 
 This is a whiptail file browser demo that allows navigating through a directory
 structure and select a specified file type per filext variable.
@@ -54,7 +53,8 @@ function Filebrowser()
                          --yes-button "Confirm" \
                          --no-button "Retry"); then
                 filename="$selection"
-                filepath="$curdir"    # Return full filepath  and filename as selection variables
+                filepath="$curdir" 
+                sudo sh ./"$selection"    # Return full filepath  and filename as selection variables
             else
                 Filebrowser "$1" "$curdir"
             fi
@@ -79,6 +79,7 @@ exitstatus=$?
 if [ $exitstatus -eq 0 ]; then
     if [ "$selection" == "" ]; then
         echo "User Pressed Esc with No File Selection"
+        sudo ./gamelist.sh
     else
         whiptail --title "File was selected" --msgbox " \
 
