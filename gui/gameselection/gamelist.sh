@@ -106,6 +106,8 @@ if [ $exitstatus -eq 0 ]; then
     fi
 else
     echo "User Pressed Cancel. with No File Selected."
+    cd /home/pi/RomDownloader/Temp/
+    sudo sh ./gamelist.sh
 fi
 echo ""
 echo "This is demo code that can be used in your own projects"
