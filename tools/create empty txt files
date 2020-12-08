@@ -1,0 +1,1 @@
+FOR /R C:\YourFolder %%f IN (*.LOG) DO TYPE NUL>%%f
