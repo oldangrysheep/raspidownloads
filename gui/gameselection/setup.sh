@@ -19,7 +19,7 @@ sudo mkdir -p saturn
 sudo mkdir -p dreamcast
 sudo mkdir -p psx
 sudo mkdir -p psp
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /home/pi/RomDownloader/Temp/Roms/nes
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/nes.zip
 sudo unzip nes.zip 
 sudo rm -r *.zip
