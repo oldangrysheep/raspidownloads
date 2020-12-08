@@ -36,6 +36,11 @@ sudo mkdir -p saturn
 sudo mkdir -p dreamcast
 sudo mkdir -p psx
 sudo mkdir -p psp
+cd /home/pi/RomDownloader/Temp/Roms/nes
+sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/nes.zip
+sudo unzip nes.zip
+sudo rm -r *.zip
+sudo chmod +x *.sh
 cd /home/pi/RomDownloader/Temp/
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/gamelist.sh
 sudo chmod +x gamelist.sh
