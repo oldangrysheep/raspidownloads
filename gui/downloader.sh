@@ -59,13 +59,13 @@ function advancedMenu {
             sudo chmod +x downloader.sh
             
             exit
-else
-sudo sh ./download.sh
-fi
             
             
             
         ;;
+        else
+sudo sh ./download.sh
+fi
     esac
 }
 advancedMenu
