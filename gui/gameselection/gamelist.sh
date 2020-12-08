@@ -79,6 +79,7 @@ exitstatus=$?
 if [ $exitstatus -eq 0 ]; then
     if [ "$selection" == "" ]; then
         echo "User Pressed Esc with No File Selection"
+        cd /home/pi/RomDownloader/Temp/
         sudo sh ./gamelist.sh
     else
         whiptail --title "File was selected" --msgbox " \
