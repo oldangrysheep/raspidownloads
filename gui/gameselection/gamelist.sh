@@ -79,7 +79,7 @@ exitstatus=$?
 if [ $exitstatus -eq 0 ]; then
     if [ "$selection" == "" ]; then
         echo "User Pressed Esc with No File Selection"
-        sudo ./gamelist.sh
+        sudo sh ./gamelist.sh
     else
         whiptail --title "File was selected" --msgbox " \
 
