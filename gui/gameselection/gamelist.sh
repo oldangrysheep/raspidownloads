@@ -2,12 +2,6 @@
 
 : '
 
-This is a whiptail file browser demo that allows navigating through a directory
-structure and select a specified file type per filext variable.
-It Returns a filename path if selected.  Esc key exits.
-This sample code can be used in a script menu to perform an operation that
-requires selecting a file.
-
 '
 
 startdir="/home/pi/RomDownloader/Temp/Roms"
