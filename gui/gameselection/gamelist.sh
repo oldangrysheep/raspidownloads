@@ -80,7 +80,7 @@ if [ $exitstatus -eq 0 ]; then
     if [ "$selection" == "" ]; then
         echo "User Pressed Esc with No File Selection"
         cd /home/pi/RomDownloader/Temp/
-        sudo sh ./gamelist.sh
+        sudo sh gamelist.sh
     else
         whiptail --title "File was selected" --msgbox " \
 
@@ -107,7 +107,7 @@ if [ $exitstatus -eq 0 ]; then
 else
     echo "User Pressed Cancel. with No File Selected."
     cd /home/pi/RomDownloader/Temp/
-    sudo sh ./gamelist.sh
+    sudo sh gamelist.sh
 fi
 echo ""
 echo "This is demo code that can be used in your own projects"
