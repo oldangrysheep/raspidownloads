@@ -9,6 +9,11 @@ result=$(whiptail --title "Select File" --backtitle "File Selector" --menu "Sele
 if [[ $? != 0 ]]
 then
     echo "Cancelled!"
+    echo "$i"
+    echo "${a[@]}"
+    echo "$a"
+    echo "${arr[$i]}"
+    echo "$result"
     exit 1
 fi
 echo "$result"
