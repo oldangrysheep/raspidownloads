@@ -1,6 +1,6 @@
 i=0
 s=65    # decimal ASCII "A" 
-for f in *.tgz
+for f in *.sh
 do
     # convert to octal then ASCII character for selection tag
     files[i]=$(echo -en "\0$(( $s / 64 * 100 + $s % 64 / 8 * 10 + $s % 8 ))")
