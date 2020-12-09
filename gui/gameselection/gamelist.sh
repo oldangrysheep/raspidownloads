@@ -6,7 +6,7 @@ else
   search_path="$2"
 fi
 
-searched=$(grep -Hrin "$1" "$search_path" -C1 | sed -E 's/(-)([[:digit:]]+)(-)/:\2:/g')
+searched=$(grep -Hrin "$1" "$/home/pi/RomDownloader/Temp/Roms" -C1 | sed -E 's/(-)([[:digit:]]+)(-)/:\2:/g')
 if [ "$searched" = "" ]; then exit; fi
 
 search_array=()
