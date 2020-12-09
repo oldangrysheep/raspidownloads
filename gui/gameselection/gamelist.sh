@@ -21,6 +21,7 @@ fi
 
 result=$(echo 3>&2 2>&1 1>&3-)
 
+echo "${files[@]}"
+
 finalresult=$((index = 2 * ( $( printf "%d" "'$result" ) - 65 ) + 1 ))
 
-echo $finalresult
