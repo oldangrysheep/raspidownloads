@@ -1,8 +1,6 @@
 #!/bin/bash
-
 cd /home/pi/RomDownloader/Temp/Roms/nes
-
-files=(*.sh
+files=(*.sh)
 
 for i in $(seq 0 $((${#files[@]}-1))); do 
     echo "$i) ${files[$i]}" 
