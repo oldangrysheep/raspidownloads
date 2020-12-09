@@ -16,7 +16,7 @@ filext='sh'
 menutitle="Game Roms Selection Menu"
 
 #------------------------------------------------------------------------------
-function Filebrowser()
+function Filebrowser
 {
 # first parameter is Menu Title
 # second parameter is optional dir path to starting folder
