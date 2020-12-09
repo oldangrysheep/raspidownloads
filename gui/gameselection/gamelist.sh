@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms
+cd /home/pi/RomDownloader/Temp/Roms/nes
 i=0
 s=65    # decimal ASCII "A" 
 for f in *.sh
