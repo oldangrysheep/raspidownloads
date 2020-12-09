@@ -11,9 +11,9 @@ requires selecting a file.
 
 '
 
-startdir="/home/pi"
-filext='jpg'
-menutitle="$filext File Selection Menu"
+startdir="/home/pi/RomDownloader/Temp/Roms"
+filext='sh'
+menutitle="Game Roms Selection Menu"
 
 #------------------------------------------------------------------------------
 function Filebrowser()
