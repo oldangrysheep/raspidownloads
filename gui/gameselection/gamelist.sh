@@ -54,9 +54,7 @@ function Filebrowser
                          --yes-button "Confirm" \
                          --no-button "Retry"); then
                 filename="$selection"
-                filepath="$curdir"
-                cd /home/pi/RomDownloader/Temp/
-                sudo sh gamelist.sh  # Return full filepath  and filename as selection variables
+                filepath="$curdir"    # Return full filepath  and filename as selection variables
             else
                 Filebrowser "$1" "$curdir"
             fi
@@ -103,6 +101,8 @@ if [ $exitstatus -eq 0 ]; then
         echo "$filepath/$filename"
         echo ""
         echo "Variables can be used in command execution"
+        cd /home/pi/RomDownloader/Temp/
+        sudo sh gamelist.sh
     fi
 else
     echo "User Pressed Cancel. with No File Selected."
