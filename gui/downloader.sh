@@ -63,9 +63,7 @@ function advancedMenu {
             
             
         ;;
-        else
-sudo sh ./download.sh
-fi
+        
     esac
 }
 advancedMenu
