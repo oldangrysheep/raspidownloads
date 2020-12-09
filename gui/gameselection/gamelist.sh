@@ -1,19 +1,28 @@
 #!/bin/bash
-cd /home/pi/RomDownloader/Temp/Roms/nes
-#!/bin/bash
-shopt -s nullglob
-array=(*.sh)
-# Create new array with null string ("") item after each filename item, so whiptail has two strings to read for each filename.
-for ((i=0; i<${#arr[@]}; i++)); do j=$((2*$i)); a[j]="${arr[$i]}"; a[j+1]=""; done
-result=$(whiptail --title "Select File" --backtitle "File Selector" --menu "Select the file from the list below:" 30 80 24 "${a[@]}" 3>&1 1>&2 2>&3)
-if [[ $? != 0 ]]
-then
-    echo "$i"
-    echo "${a[@]}"
-    echo "$a"
-    echo "${arr[$i]}"
-    echo "$result"
-    echo "Cancelled!"
-    exit 1
+
+if [ -z "$2" ]; then
+  search_path="."
+else
+  search_path="$2"
 fi
-echo "$result"
+
+searched=$(grep -Hrin "$1" "$search_path" -C1 | sed -E 's/(-)([[:digit:]]+)(-)/:\2:/g')
+if [ "$searched" = "" ]; then exit; fi
+
+search_array=()
+
+while read line; do
+  if [ "$line" = "--" ]; then continue; fi
+  file_name="$(echo $line | awk -F ":" '{print $1}'):$(echo $line | awk -F ":" '{print $2}')"
+  file_content="$(echo $line | awk -F ":" '{$1=$2=""; print $0}')"
+  search_array+=("$file_name" "$file_content")
+done <<EOF
+$searched
+EOF
+
+ret_vim=$(whiptail --menu "Select" "" "" "" "${search_array[@]}" 3>&1 1>&2 2>&3)
+if [ "$ret_vim" = "" ]; then exit; fi
+ret_vim_file=$(echo $ret_vim | awk -F ":" '{print $1}')
+ret_vim_line=$(echo $ret_vim | awk -F ":" '{print $2}')
+
+$EDITOR +$ret_vim_line $ret_vim_file
