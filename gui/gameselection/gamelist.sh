@@ -16,7 +16,7 @@ filext='sh'
 menutitle="Game Roms Selection Menu"
 
 #------------------------------------------------------------------------------
-function Filebrowser()
+function Filebrowser
 {
 # first parameter is Menu Title
 # second parameter is optional dir path to starting folder
@@ -55,6 +55,7 @@ function Filebrowser()
                          --no-button "Retry"); then
                 filename="$selection"
                 filepath="$curdir"
+                cd /home/pi/RomDownloader/Temp/
                 sudo sh gamelist.sh  # Return full filepath  and filename as selection variables
             else
                 Filebrowser "$1" "$curdir"
