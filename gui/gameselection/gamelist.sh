@@ -1,29 +1,10 @@
-#!/bin/bash
-cd /home/pi/RomDownloader/Temp/
-if [ -z "$2" ]; then
-  search_path="."
-else
-  search_path="$2"
-fi
+i=0
+s=65    # decimal ASCII "A" 
+for f in *.tgz
+do
 
-searched=$(grep -Hrin "$1" "$search_path" -C1 | sed -E 's/(-)([[:digit:]]+)(-)/:\2:/g')
-if [ "$searched" = "" ]; then exit; fi
+done
 
-search_array=()
+result=$(whiptail-command 3>&2 2>&1 1>&3-)
 
-while read line; do
-  if [ "$line" = "--" ]; then continue; fi
-  file_name="$(echo $line | awk -F ":" '{print $1}'):$(echo $line | awk -F ":" '{print $2}')"
-  file_content="$(echo $line | awk -F ":" '{$1=$2=""; print $0}')"
-  search_array+=("$file_name" "$file_content")
-done <<EOF
-$searched
-EOF
-
-ret_vim=$(whiptail --menu "Select" "" "" "" "${search_array[@]}" 3>&1 1>&2 2>&3)
-if [ "$ret_vim" = "" ]; then exit; fi
-ret_vim_file=$(echo $ret_vim | awk -F ":" '{print $1}')
-ret_vim_line=$(echo $ret_vim | awk -F ":" '{print $2}')
-
-$EDITOR +$ret_vim_line $ret_vim_file
-
+((index = 2 * ( $( printf "%d" "'$result" ) - 65 ) + 1 ))
