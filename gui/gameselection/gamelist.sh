@@ -16,7 +16,7 @@ filext='sh'
 menutitle="Game Roms Selection Menu"
 
 #------------------------------------------------------------------------------
-function Filebrowser
+function Filebrowser()
 {
 # first parameter is Menu Title
 # second parameter is optional dir path to starting folder
@@ -103,9 +103,11 @@ if [ $exitstatus -eq 0 ]; then
         echo "Variables can be used in command execution"
         cd /home/pi/RomDownloader/Temp/
         sudo sh gamelist.sh
+        cd /home/pi/RomDownloader/Temp/Roms
     fi
 else
     echo "User Pressed Cancel. with No File Selected."
 fi
 echo ""
-
+cd /home/pi/RomDownloader/Temp/
+sudo sh downloader.sh
