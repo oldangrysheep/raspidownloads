@@ -12,6 +12,12 @@ done
 
 whiptail --backtitle "Welcome to Chillys Rom Downloader" --title "Download Games" \
     --menu "Please select the Game to Download" 14 40 6 "${files[@]}"
+    
+    if [[ $? == 255 ]]
+then
+    do cancel stuff
+fi
+
 
 result=$(echo 3>&2 2>&1 1>&3-)
 
