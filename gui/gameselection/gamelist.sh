@@ -14,3 +14,5 @@ whiptail --backtitle "Welcome to Chillys Rom Downloader" --title "Download Games
     --menu "Please select the Game to Download" 14 40 6 "${files[@]}"
 
 result=$(whiptail-command 3>&2 2>&1 1>&3-)
+
+((index = 2 * ( $( echo "%d" "'$result" ) - 65 ) + 1 ))
