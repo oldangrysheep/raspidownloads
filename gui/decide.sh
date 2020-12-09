@@ -17,19 +17,19 @@ function advancedMenu {
         "14" "Download All Selected" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
-            echo "https://archive.org/download/gb_20201207/games/nes.zip" >> itemlist.txt
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         2)
-            echo "https://archive.org/download/gb_20201207/games/snes.zip" >> itemlist.txt
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/snes.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         3)
-            echo "https://archive.org/download/gb_20201207/games/gb.zip" >> itemlist.txt
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gb.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         4)
-            echo "https://archive.org/download/gb_20201207/games/gbc.zip" >> itemlist.txt
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/gbc.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         5)
@@ -44,7 +44,7 @@ function advancedMenu {
             sudo sh ./decide.sh
         ;;
         8)
-            echo "https://archive.org/download/gb_20201207/games/virtualboy.zip" >> itemlist.txt
+            echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/virtualboy.zip" >> itemlist.txt
             sudo sh ./decide.sh
         ;;
         9)
