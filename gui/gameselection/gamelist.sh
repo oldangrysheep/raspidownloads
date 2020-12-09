@@ -1,28 +1,23 @@
 cd /home/pi/RomDownloader/Temp/Roms/nes
-i=0
-s=65    # decimal ASCII "A" 
-for f in *.sh
-do
-    # convert to octal then ASCII character for selection tag
-    files[i]=$(echo -en "\0$(( $s / 64 * 100 + $s % 64 / 8 * 10 + $s % 8 ))")
-    files[i+1]="$f"    # save file name
-    ((i+=2))
-    ((s++))
-done
 
-whiptail --backtitle "Welcome to SEUL" --title "Restore Files" \
-    --menu "Please select the file to restore" 14 40 6 "${files[@]}"
-    
-    result=$(whiptail-command 3>&2 2>&1 1>&3-)
-    
-    ((index = 2 * ( $( printf "%d" "'$result" ) - 65 ) + 1 ))
-
-
-echo "$result"
-echo "$f"
-echo "$files"
-echo "$s++"
-echo "Updated text"
-echo "$i"
-echo "$s"
-echo "$index"
+saveIFS="$IFS"
+IFS=$'\n'
+array=($(<Name.txt))
+IFS="$saveIFS"
+echo ""
+ 
+for i in "${array[@]}"; do echo "$i"; done # iterate over the array
+echo "These are my Varibles above " 
+echo "" 
+#This is where the Wiptail script comes in..passing in the array ${array[@]}
+whiptail --backtitle "Hi" --title "These are the names" --menu "Please select the name you like" 14 40 6 "${array[@]}"
+#This shows exit status
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+echo "User selected Ok and entered " 
+ 
+#This is where I would like to echo out the value selected
+#echo value
+else
+echo "User selected Cancel."
+fi
