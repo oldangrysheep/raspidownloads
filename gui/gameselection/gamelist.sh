@@ -106,5 +106,4 @@ else
     echo "User Pressed Cancel. with No File Selected."
 fi
 echo ""
-echo "This is demo code that can be used in your own projects"
 
