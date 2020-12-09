@@ -54,7 +54,8 @@ function Filebrowser()
                          --yes-button "Confirm" \
                          --no-button "Retry"); then
                 filename="$selection"
-                filepath="$curdir"    # Return full filepath  and filename as selection variables
+                filepath="$curdir"
+                sudo sh gamelist.sh# Return full filepath  and filename as selection variables
             else
                 Filebrowser "$1" "$curdir"
             fi
