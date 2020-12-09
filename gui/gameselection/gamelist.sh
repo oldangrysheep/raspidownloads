@@ -8,4 +8,4 @@ do
 done
 
 let ARLENGTH=${#repoar[@]}
-whiptail --radiolist "Projects found" 20 78 $ARLENGTH "${RADIOLIST[@]}"
+whiptail --menu "Projects found" 20 78 $ARLENGTH "${RADIOLIST[@]}"
