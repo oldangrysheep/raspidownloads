@@ -16,3 +16,9 @@ whiptail --backtitle "Welcome to SEUL" --title "Restore Files" \
     result=$(whiptail --menu "Welcome" 3>&2 2>&1 1>&3-)
     
     ((index = 2 * ( $( printf "%d" "'$result" ) - 65 ) + 1 ))
+
+
+echo "$result"
+echo "$f"
+echo "$files"
+echo "$s++"
