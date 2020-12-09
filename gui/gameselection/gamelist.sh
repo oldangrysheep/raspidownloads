@@ -10,12 +10,9 @@ do
     ((s++))
 done
 
-whiptail --backtitle "Welcome to Chillys Rom Downloader" --title "Download Games" \
-    --menu "Please select the Game to Download" 14 40 6 "${files[@]}"
+whiptail --backtitle "Welcome to SEUL" --title "Restore Files" \
+    --menu "Please select the file to restore" 14 40 6 "${files[@]}"
     
-
-result=$(echo 3>&2 2>&1 1>&3-)
-
-echo "$files"
-$((index = 2 * ( $( printf "%d" "'$result" ) - 65 ) + 1 ))
-
+    result=$(whiptail --menu "Welcome" 3>&2 2>&1 1>&3-)
+    
+    ((index = 2 * ( $( printf "%d" "'$result" ) - 65 ) + 1 ))
