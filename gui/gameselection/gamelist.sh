@@ -10,5 +10,7 @@ do
     ((s++))
 done
 
-whiptail --backtitle "Welcome to Chillys Rom Downloader" --title "Restore Files" \
+whiptail --backtitle "Welcome to Chillys Rom Downloader" --title "Download Games" \
     --menu "Please select the Game to Download" 14 40 6 "${files[@]}"
+
+result=$(whiptail-command 3>&2 2>&1 1>&3-)
