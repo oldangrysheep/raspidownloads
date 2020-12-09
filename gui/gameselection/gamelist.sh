@@ -33,12 +33,12 @@ function Filebrowser()
     if [ "$curdir" == "/" ] ; then  # Check if you are at root folder
         selection=$(whiptail --title "$1" \
                               --menu "PgUp/PgDn/Arrow Enter Selects File/Folder\nor Tab Key\n$curdir" 0 0 0 \
-                              --cancel-button Cancel \
+                              --cancel-button cd /home/pi/RomDownloader/Temp && sudo sh downloader.sh
                               --ok-button Select $dir_list 3>&1 1>&2 2>&3)
     else   # Not Root Dir so show ../ BACK Selection in Menu
         selection=$(whiptail --title "$1" \
                               --menu "PgUp/PgDn/Arrow Enter Selects File/Folder\nor Tab Key\n$curdir" 0 0 0 \
-                              --cancel-button cd /home/pi/RomDownloader/Temp && sudo sh downloader.sh
+                              --cancel-button Cancel \
                               --ok-button Select ../ BACK $dir_list 3>&1 1>&2 2>&3)
     fi
 
