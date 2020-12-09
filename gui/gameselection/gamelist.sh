@@ -1,11 +1,14 @@
 #!/bin/bash
 cd /home/pi/RomDownloader/Temp/Roms/nes
-
-RADIOLIST=()
-for ((i=0; i<${#repoar[@]}; i++))
-do
-    RADIOLIST+=("$i" "${repoar[$i]}" "OFF")
-done
-
-let ARLENGTH=${#repoar[@]}
-whiptail --menu "Projects found" 20 78 $ARLENGTH "${RADIOLIST[@]}"
+#!/bin/bash
+shopt -s nullglob
+array=(*.sh)
+# Create new array with null string ("") item after each filename item, so whiptail has two strings to read for each filename.
+for ((i=0; i<${#arr[@]}; i++)); do j=$((2*$i)); a[j]="${arr[$i]}"; a[j+1]=""; done
+result=$(whiptail --title "Select File" --backtitle "File Selector" --menu "Select the file from the list below:" 30 80 24 "${a[@]}" 3>&1 1>&2 2>&3)
+if [[ $? != 0 ]]
+then
+    echo "Cancelled!"
+    exit 1
+fi
+echo "$result"
