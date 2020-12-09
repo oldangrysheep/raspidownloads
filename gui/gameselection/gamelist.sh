@@ -11,3 +11,4 @@ read -e -p "Select a file by index from the list: " -i 1 choice
 # TODO validate and default choice
 
 echo "File choice ${files[$choice]}"
+exit
