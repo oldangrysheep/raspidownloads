@@ -1,42 +1,62 @@
-Filebrowser() {
-if [ -z $1 ]; then
-imgpath=$(ls -lhp / | awk -F ' ' ' { print $9 " " $5 } ')
-else
-imgpath=$(ls -lhp "/$1" | awk -F ' ' ' { print $9 " " $5 } ')
-fi
-if [ -z $1 ]; then
-pathselect=$(whiptail --menu "Select Image File" 40 50 30 --cancel-button Cancel --ok-button Select $imgpath 3>&1 1>&2 2>&3)
-else
-pathselect=$(whiptail --menu "Select Image File" 40 50 30 --cancel-button Cancel --ok-button Select ../ BACK $imgpath 3>&1 1>&2 2>&3)
-fi
-RET=$?
-if [ $RET -eq 1 ]; then
-## This is the section where you control what happens when the user hits Cancel
-AdvancedMenu
-exit 0
-elif [ $RET -eq 0 ]; then
-if [[ -d "/$1$pathselect" ]]; then
-Filebrowser "/$1$pathselect"
-elif [[ -f "/$1$pathselect" ]]; then
-## Do your thing here, this is just a stub of the code I had to do what I wanted the script to do.
-fileout=`file "$1$pathselect"`
-filename=`readlink -m $1$pathselect`
-if [[ $fileout =~ x86\ boot\ sector$ ]]; then
-whiptail --yesno --title "! WARNING !" "About to try and automatically resize $filename. Are you sure ?" 10 50
-if [ $? -ne 0 ]; then
-Filebrowser
-fi
-else
-whiptail --msgbox --title "! ERROR ! ERROR ! ERROR ! " "Selected file is not an image file." 8 44
-Filebrowser
-fi
-else
-echo pathselect $1$pathselect
-whiptail --title "! ERROR !" --msgbox "Error setting path to image file." 8 44
-unset base
-unset imgpath
-Filebrowser
-fi
-exit 0
-fi
+# ----------------------------------------------------------------------
+#  File selection dialog
+#
+#  Arguments
+#     1  Dialog title
+#     2  Source path to list files and directories
+#     3  File mask (by default *)
+#     4  "yes" to allow go back in the file system.
+#
+#  Returns
+#     0  if a file was selected and loads the FILE_SELECTED variable 
+#        with the selected file.
+#     1  if the user cancels.
+# ----------------------------------------------------------------------
+function dr_file_select
+{
+    local TITLE=${1:-$MSG_INFO_TITLE}
+    local LOCAL_PATH=${2:-$(pwd)}
+    local FILE_MASK=${3:-"*"}
+    local ALLOW_BACK=${4:-no}
+    local FILES=()
+
+    [ "$ALLOW_BACK" != "no" ] && FILES+=(".." "..")
+
+    # First add folders
+    for DIR in $(find $LOCAL_PATH -maxdepth 1 -mindepth 1 -type d -printf "%f " 2> /dev/null)
+    do
+        FILES+=($DIR "folder")
+    done
+
+    # Then add the files
+    for FILE in $(find $LOCAL_PATH -maxdepth 1 -type f -name "$FILE_MASK" -printf "%f %s " 2> /dev/null)
+    do
+        FILES+=($FILE)
+    done
+
+    while true
+    do
+        FILE_SELECTED=$(whiptail --clear --backtitle "$BACK_TITLE" --title "$TITLE" --menu "$LOCAL_PATH" 38 80 30 ${FILES[@]} 3>&1 1>&2 2>&3)
+
+        if [ -z "$FILE_SELECTED" ]; then
+            return 1
+        else
+            if [ "$FILE_SELECTED" = ".." ] && [ "$ALLOW_BACK" != "no" ]; then
+                return 0
+
+            elif [ -d "$LOCAL_PATH/$FILE_SELECTED" ] ; then
+                if dr_file_select "$TITLE" "$LOCAL_PATH/$FILE_SELECTED" "$FILE_MASK" "yes" ; then
+                    if [ "$FILE_SELECTED" != ".." ]; then
+                        return 0
+                    fi
+                else
+                    return 1
+                fi
+
+            elif [ -f "$LOCAL_PATH/$FILE_SELECTED" ] ; then
+                FILE_SELECTED="$LOCAL_PATH/$FILE_SELECTED"
+                return 0
+            fi
+        fi
+    done
 }
