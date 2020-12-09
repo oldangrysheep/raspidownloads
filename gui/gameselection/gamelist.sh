@@ -1,62 +1,110 @@
-# ----------------------------------------------------------------------
-#  File selection dialog
-#
-#  Arguments
-#     1  Dialog title
-#     2  Source path to list files and directories
-#     3  File mask (by default *)
-#     4  "yes" to allow go back in the file system.
-#
-#  Returns
-#     0  if a file was selected and loads the FILE_SELECTED variable 
-#        with the selected file.
-#     1  if the user cancels.
-# ----------------------------------------------------------------------
-function dr_file_select
+#!/bin/bash
+
+: '
+                   filebrowse.sh written by Claude Pageau
+
+This is a whiptail file browser demo that allows navigating through a directory
+structure and select a specified file type per filext variable.
+It Returns a filename path if selected.  Esc key exits.
+This sample code can be used in a script menu to perform an operation that
+requires selecting a file.
+
+'
+
+startdir="/home/pi"
+filext='jpg'
+menutitle="$filext File Selection Menu"
+
+#------------------------------------------------------------------------------
+function Filebrowser()
 {
-    local TITLE=${1:-$MSG_INFO_TITLE}
-    local LOCAL_PATH=${2:-$(pwd)}
-    local FILE_MASK=${3:-"*"}
-    local ALLOW_BACK=${4:-no}
-    local FILES=()
+# first parameter is Menu Title
+# second parameter is optional dir path to starting folder
+# otherwise current folder is selected
 
-    [ "$ALLOW_BACK" != "no" ] && FILES+=(".." "..")
+    if [ -z $2 ] ; then
+        dir_list=$(ls -lhp  | awk -F ' ' ' { print $9 " " $5 } ')
+    else
+        cd "$2"
+        dir_list=$(ls -lhp  | awk -F ' ' ' { print $9 " " $5 } ')
+    fi
 
-    # First add folders
-    for DIR in $(find $LOCAL_PATH -maxdepth 1 -mindepth 1 -type d -printf "%f " 2> /dev/null)
-    do
-        FILES+=($DIR "folder")
-    done
+    curdir=$(pwd)
+    if [ "$curdir" == "/" ] ; then  # Check if you are at root folder
+        selection=$(whiptail --title "$1" \
+                              --menu "PgUp/PgDn/Arrow Enter Selects File/Folder\nor Tab Key\n$curdir" 0 0 0 \
+                              --cancel-button Cancel \
+                              --ok-button Select $dir_list 3>&1 1>&2 2>&3)
+    else   # Not Root Dir so show ../ BACK Selection in Menu
+        selection=$(whiptail --title "$1" \
+                              --menu "PgUp/PgDn/Arrow Enter Selects File/Folder\nor Tab Key\n$curdir" 0 0 0 \
+                              --cancel-button Cancel \
+                              --ok-button Select ../ BACK $dir_list 3>&1 1>&2 2>&3)
+    fi
 
-    # Then add the files
-    for FILE in $(find $LOCAL_PATH -maxdepth 1 -type f -name "$FILE_MASK" -printf "%f %s " 2> /dev/null)
-    do
-        FILES+=($FILE)
-    done
-
-    while true
-    do
-        FILE_SELECTED=$(whiptail --clear --backtitle "$BACK_TITLE" --title "$TITLE" --menu "$LOCAL_PATH" 38 80 30 ${FILES[@]} 3>&1 1>&2 2>&3)
-
-        if [ -z "$FILE_SELECTED" ]; then
-            return 1
-        else
-            if [ "$FILE_SELECTED" = ".." ] && [ "$ALLOW_BACK" != "no" ]; then
-                return 0
-
-            elif [ -d "$LOCAL_PATH/$FILE_SELECTED" ] ; then
-                if dr_file_select "$TITLE" "$LOCAL_PATH/$FILE_SELECTED" "$FILE_MASK" "yes" ; then
-                    if [ "$FILE_SELECTED" != ".." ]; then
-                        return 0
-                    fi
-                else
-                    return 1
-                fi
-
-            elif [ -f "$LOCAL_PATH/$FILE_SELECTED" ] ; then
-                FILE_SELECTED="$LOCAL_PATH/$FILE_SELECTED"
-                return 0
+    RET=$?
+    if [ $RET -eq 1 ]; then  # Check if User Selected Cancel
+       return 1
+    elif [ $RET -eq 0 ]; then
+       if [[ -d "$selection" ]]; then  # Check if Directory Selected
+          Filebrowser "$1" "$selection"
+       elif [[ -f "$selection" ]]; then  # Check if File Selected
+          if [[ $selection == *$filext ]]; then   # Check if selected File has .jpg extension
+            if (whiptail --title "Confirm Selection" --yesno "DirPath : $curdir\nFileName: $selection" 0 0 \
+                         --yes-button "Confirm" \
+                         --no-button "Retry"); then
+                filename="$selection"
+                filepath="$curdir"    # Return full filepath  and filename as selection variables
+            else
+                Filebrowser "$1" "$curdir"
             fi
-        fi
-    done
+          else   # Not correct extension so Inform User and restart
+             whiptail --title "ERROR: File Must have $filext Extension" \
+                      --msgbox "$selection\nYou Must Select a $filext file" 0 0
+             Filebrowser "$1" "$curdir"
+          fi
+       else
+          # Could not detect a file or folder so Try Again
+          whiptail --title "ERROR: Selection Error" \
+                   --msgbox "Error Changing to Path $selection" 0 0
+          Filebrowser "$1" "$curdir"
+       fi
+    fi
 }
+
+
+Filebrowser "$menutitle" "$startdir"
+
+exitstatus=$?
+if [ $exitstatus -eq 0 ]; then
+    if [ "$selection" == "" ]; then
+        echo "User Pressed Esc with No File Selection"
+    else
+        whiptail --title "File was selected" --msgbox " \
+
+        File Selected information
+
+        Filename : $filename
+        Directory: $filepath
+
+        \
+        " 0 0 0
+        echo ""
+        echo "---- $0 variable output values -----"
+        echo ""
+        echo '$filename = '$filename
+        echo '$filepath = '$filepath
+        echo ""
+        echo "You can combine variables per"
+        echo 'echo $filepath/$filename'
+        echo "result is"
+        echo "$filepath/$filename"
+        echo ""
+        echo "Variables can be used in command execution"
+    fi
+else
+    echo "User Pressed Cancel. with No File Selected."
+fi
+echo ""
+echo "This is demo code that can be used in your own projects"
+
