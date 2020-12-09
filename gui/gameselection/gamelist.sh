@@ -1,12 +1,12 @@
 #!/bin/bash
-
+cd /home/pi/RomDownloader/Temp/
 if [ -z "$2" ]; then
   search_path="."
 else
   search_path="$2"
 fi
 
-searched=$(grep -Hrin "$1" "$/home/pi/RomDownloader/Temp/Roms" -C1 | sed -E 's/(-)([[:digit:]]+)(-)/:\2:/g')
+searched=$(grep -Hrin "$1" "$search_path" -C1 | sed -E 's/(-)([[:digit:]]+)(-)/:\2:/g')
 if [ "$searched" = "" ]; then exit; fi
 
 search_array=()
@@ -26,3 +26,4 @@ ret_vim_file=$(echo $ret_vim | awk -F ":" '{print $1}')
 ret_vim_line=$(echo $ret_vim | awk -F ":" '{print $2}')
 
 $EDITOR +$ret_vim_line $ret_vim_file
+
