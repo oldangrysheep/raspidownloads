@@ -1,5 +1,11 @@
 #!/bin/bash
 cd /home/pi/RomDownloader/Temp/Roms/nes
 
-read -ra array <<<$(ifconfig -a | awk '!/^ / && NF {print $1; print $1}')
-whiptail --title Networking --menu "select your choice" 16 78 5 "${array[@]}"
+RADIOLIST=()
+for ((i=0; i<${#repoar[@]}; i++))
+do
+    RADIOLIST+=("$i" "${repoar[$i]}" "OFF")
+done
+
+let ARLENGTH=${#repoar[@]}
+whiptail --radiolist "Projects found" 20 78 $ARLENGTH "${RADIOLIST[@]}"
