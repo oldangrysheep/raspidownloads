@@ -23,3 +23,6 @@ echo "$f"
 echo "$files"
 echo "$s++"
 echo "Updated text"
+
+sudo sh '"$result"'
+
