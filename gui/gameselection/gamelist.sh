@@ -24,5 +24,6 @@ echo "$files"
 echo "$s++"
 echo "Updated text"
 
+echo "sudo sh '"$result"'"
 sudo sh '"$result"'
 
