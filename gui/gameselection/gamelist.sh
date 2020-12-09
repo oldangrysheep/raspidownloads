@@ -1,106 +1,42 @@
-#!/bin/bash
-
-: '
-
-'
-
-startdir="/home/pi/RomDownloader/Temp/Roms"
-filext='sh'
-menutitle="$filext Rom Selection Menu"
-
-#------------------------------------------------------------------------------
-function Filebrowser
-{
-# first parameter is Menu Title
-# second parameter is optional dir path to starting folder
-# otherwise current folder is selected
-
-    if [ -z $2 ] ; then
-        dir_list=$(ls -lhp  | awk -F ' ' ' { print $9 " " $5 } ')
-    else
-        cd "$2"
-        dir_list=$(ls -lhp  | awk -F ' ' ' { print $9 " " $5 } ')
-    fi
-
-    curdir=$(pwd)
-    if [ "$curdir" == "/" ] ; then  # Check if you are at root folder
-        selection=$(whiptail --title "$1" \
-                              --menu "PgUp/PgDn/Arrow Enter Selects File/Folder\nor Tab Key\n$curdir" 0 0 0 \
-                              --cancel-button Cancel \
-                              --ok-button Select $dir_list 3>&1 1>&2 2>&3)
-    else   # Not Root Dir so show ../ BACK Selection in Menu
-        selection=$(whiptail --title "$1" \
-                              --menu "PgUp/PgDn/Arrow Enter Selects File/Folder\nor Tab Key\n$curdir" 0 0 0 \
-                              --cancel-button Cancel \
-                              --ok-button Select ../ BACK $dir_list 3>&1 1>&2 2>&3)
-    fi
-
-    RET=$?
-    if [ $RET -eq 1 ]; then  # Check if User Selected Cancel
-       return 1
-    elif [ $RET -eq 0 ]; then
-       if [[ -d "$selection" ]]; then  # Check if Directory Selected
-          Filebrowser "$1" "$selection"
-       elif [[ -f "$selection" ]]; then  # Check if File Selected
-          if [[ $selection == *$filext ]]; then   # Check if selected File has .jpg extension
-            if (whiptail --title "Confirm Selection" --yesno "DirPath : $curdir\nFileName: $selection" 0 0 \
-                         --yes-button "Confirm" \
-                         --no-button "Retry"); then
-                filename="$selection"
-                filepath="$curdir" 
-                sudo sh ./"$selection"
-            else
-                Filebrowser "$1" "$curdir"
-            fi
-          else   # Not correct extension so Inform User and restart
-             whiptail --title "ERROR: File Must have $filext Extension" \
-                      --msgbox "$selection\nYou Must Select a $filext file" 0 0
-             Filebrowser "$1" "$curdir"
-          fi
-       else
-          # Could not detect a file or folder so Try Again
-          whiptail --title "ERROR: Selection Error" \
-                   --msgbox "Error Changing to Path $selection" 0 0
-          Filebrowser "$1" "$curdir"
-       fi
-    fi
-}
-
-
-Filebrowser "$menutitle" "$startdir"
-
-exitstatus=$?
-if [ $exitstatus -eq 0 ]; then
-    if [ "$selection" == "" ]; then
-        echo "User Pressed Esc with No File Selection"
-    else
-        whiptail --title "File was selected" --msgbox " \
-
-        File Selected information
-
-        Filename : $filename
-        Directory: $filepath
-
-        \
-        " 0 0 0
-        echo ""
-        echo "---- $0 variable output values -----"
-        echo ""
-        echo '$filename = '$filename
-        echo '$filepath = '$filepath
-        echo ""
-        echo "You can combine variables per"
-        echo 'echo $filepath/$filename'
-        echo "result is"
-        echo "$filepath/$filename"
-        echo ""
-        echo "Variables can be used in command execution"
-    fi
+Filebrowser() {
+if [ -z $1 ]; then
+imgpath=$(ls -lhp / | awk -F ' ' ' { print $9 " " $5 } ')
 else
-    echo "User Pressed Cancel. with No File Selected."
-    cd /home/pi/RomDownloader/Temp/
-    sudo sh downloader.sh
+imgpath=$(ls -lhp "/$1" | awk -F ' ' ' { print $9 " " $5 } ')
 fi
-echo ""
-echo "This is demo code that can be used in your own projects"
-
+if [ -z $1 ]; then
+pathselect=$(whiptail --menu "Select Image File" 40 50 30 --cancel-button Cancel --ok-button Select $imgpath 3>&1 1>&2 2>&3)
+else
+pathselect=$(whiptail --menu "Select Image File" 40 50 30 --cancel-button Cancel --ok-button Select ../ BACK $imgpath 3>&1 1>&2 2>&3)
+fi
+RET=$?
+if [ $RET -eq 1 ]; then
+## This is the section where you control what happens when the user hits Cancel
+AdvancedMenu
+exit 0
+elif [ $RET -eq 0 ]; then
+if [[ -d "/$1$pathselect" ]]; then
+Filebrowser "/$1$pathselect"
+elif [[ -f "/$1$pathselect" ]]; then
+## Do your thing here, this is just a stub of the code I had to do what I wanted the script to do.
+fileout=`file "$1$pathselect"`
+filename=`readlink -m $1$pathselect`
+if [[ $fileout =~ x86\ boot\ sector$ ]]; then
+whiptail --yesno --title "! WARNING !" "About to try and automatically resize $filename. Are you sure ?" 10 50
+if [ $? -ne 0 ]; then
+Filebrowser
+fi
+else
+whiptail --msgbox --title "! ERROR ! ERROR ! ERROR ! " "Selected file is not an image file." 8 44
+Filebrowser
+fi
+else
+echo pathselect $1$pathselect
+whiptail --title "! ERROR !" --msgbox "Error setting path to image file." 8 44
+unset base
+unset imgpath
+Filebrowser
+fi
+exit 0
+fi
+}
