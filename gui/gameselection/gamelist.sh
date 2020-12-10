@@ -13,4 +13,5 @@ then
 # ge 5 in next line should be length of file extension including . character, plus 1
   [ ${#result} -ge 5 ] && outfile="/path/to/files/$result" || echo "Selection not made"
 fi
+echo "$result"
 cd "$dir"
