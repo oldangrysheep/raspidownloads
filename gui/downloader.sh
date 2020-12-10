@@ -6,14 +6,9 @@ if ! [ -x "$(command -v whiptail)" ]; then
   sudo apt-get install whiptail -y
 fi
 
-if ! [ -x "$(command -v dialog)" ]; then
+if ! [ -x "$(command -v unzip)" ]; then
   echo "Just installing Dependancies" 
-  sudo apt-get install dialog -y
-fi
-
-if ! [ -x "$(command -v fim)" ]; then
-  echo "Just installing Dependancies" 
-  sudo apt-get install fim -y
+  sudo apt-get install unzip -y
 fi
 
 sudo mkdir -p /home/pi/RomDownloader/Temp
