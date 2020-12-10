@@ -9,4 +9,4 @@ sudo wget -r -H -nc -np -nH --cut-dirs=1 -e robots=off -l1 -P /home/pi/RomDownlo
 sudo rm -r itemlist.txt
 #And Were Done
 cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/
-sudo mv /home/pi/RomDownloader/Temp/roms/Items_To_Download/* /home/pi/RetroPie/roms
+sudo mv /home/pi/RomDownloader/Temp/Roms/Items_To_Download/* /home/pi/RetroPie/roms
