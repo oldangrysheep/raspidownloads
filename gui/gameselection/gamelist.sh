@@ -69,16 +69,7 @@ function advancedMenu {
         ;;
         14)
             exit
-        ;;
-          
-          exitstatus=$?
-          if [ $exitstatus = 0 ]; then
-         ...
-      else
-         break
-      fi
-      ;;
-            
+        ;;  
     esac
 }
 advancedMenu
