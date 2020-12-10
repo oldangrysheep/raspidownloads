@@ -19,6 +19,7 @@ function advancedMenu {
         1)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/nes.sh
             sudo bash ./nes.sh
+            sudo rm -r nes.sh
             cd /home/pi/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
