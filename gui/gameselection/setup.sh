@@ -1,4 +1,3 @@
-whiptail --title "Selective Downloading is currently a Work in progress" --msgbox "I am a really bad programmer and i have a really complicated script for no reason. Hopefully it will get fixed soon Version 0.1" 8 78
 cd /home/pi/RomDownloader/Temp/Roms
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/DownloadSelected.sh
 sudo chmod +x DownloadSelected.sh
