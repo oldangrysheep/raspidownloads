@@ -19,6 +19,8 @@ function advancedMenu {
         1)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/nes.sh
             sudo bash ./nes.sh
+            cd /home/pi/RomDownloader/Temp
+            sudo sh gamelist.sh
         ;;
         2)
             echo "https://archive.org/download/gb_20201207/Complete%20Rom%20Sets/snes.zip" >> itemlist.txt
