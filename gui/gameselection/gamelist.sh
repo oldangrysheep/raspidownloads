@@ -68,7 +68,11 @@ function advancedMenu {
             exit
         ;;
         14)
-            exit
+            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/DownloadSelected.sh
+            sudo chmod +x DownloadSelected.sh
+            sudo sh DownloadSelected.sh
+            whiptail --title "Downloads Complete" --msgbox "Click Exit On The Main Menu Then Restart Emulation Station In Order To See Roms" 8 78
+            sudo sh downloader.sh
         ;;  
     esac
 }
