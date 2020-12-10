@@ -74,3 +74,5 @@ function advancedMenu {
     esac
 }
 advancedMenu
+cd /home/pi/RomDownloader/Temp
+sudo sh downloader.sh
