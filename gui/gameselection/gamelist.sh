@@ -66,8 +66,6 @@ function advancedMenu {
         ;;
         14)
             cd /home/pi/RomDownloader/Temp/
-else
-    sudo sh ./decide.sh
 fi
             
             
