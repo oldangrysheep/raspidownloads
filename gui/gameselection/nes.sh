@@ -14,4 +14,5 @@ then
   [ ${#result} -ge 5 ] && outfile="/path/to/files/$result" || echo "Selection not made"
 fi
 echo "$result"
+sudo sh "$result"
 cd "$dir"
