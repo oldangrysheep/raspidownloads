@@ -65,7 +65,7 @@ function advancedMenu {
             exit
         ;;
         14)
-            cd /home/pi/RomDownloader/Temp/
+            exit
 fi
             
             
