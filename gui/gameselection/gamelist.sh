@@ -67,7 +67,6 @@ function advancedMenu {
         14)
             exit
         ;;
-fi
             
             
         ;;
