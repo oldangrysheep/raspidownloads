@@ -1,6 +1,4 @@
 cd /home/pi/RomDownloader/Temp/Roms
-sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/DownloadSelected.sh
-sudo chmod +x DownloadSelected.sh
 sudo mkdir -p Items_To_Download
 cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download
 sudo mkdir -p nes
