@@ -25,7 +25,12 @@ function advancedMenu {
             sudo sh downloader.sh
         ;;
         2)
+            whiptail --title "Downloads Started" --msgbox "You will now be redirected towards the start menu. To check on the download, select Downloads on the main menu. Dont start this command more than once." 8 78
+            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/Download%20In%20Backround.sh
+            sudo chmod +x "Download In Backround.sh"
             exit
+            sudo sh "Download In Backround.sh"
+            sudo sh downloader.sh
         ;;
         3)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/nes.sh
