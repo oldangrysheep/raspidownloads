@@ -47,16 +47,16 @@ function advancedMenu {
             sudo sh gamelist.sh
         ;;
         5)
-            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/n64.sh
-            sudo bash ./n64.sh
-            sudo rm -r n64.sh
+            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/gb.sh
+            sudo bash ./gb.sh
+            sudo rm -r gb.sh
             cd /home/pi/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         6)
-            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/nds.sh
-            sudo bash ./nds.sh
-            sudo rm -r nds.sh
+            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/gbc.sh
+            sudo bash ./gbc.sh
+            sudo rm -r gbc.sh
             cd /home/pi/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
@@ -69,7 +69,7 @@ function advancedMenu {
         ;;
         8)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/nes.sh
-            sudo bash ./nes.sh
+            sudo bash ./n64.sh
             sudo rm -r nes.sh
             cd /home/pi/RomDownloader/Temp
             sudo sh gamelist.sh
