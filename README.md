@@ -13,5 +13,8 @@ sudo chmod +x install.sh
 sudo ./install.sh
 
 3. reboot and enter the configuration and youll see it there c:
+
+
+
 things i need to edit:
 i need to change wget to something with simultaneous downloads since the place im downloading from works best with multiple parts downloading at once
