@@ -21,7 +21,9 @@ function advancedMenu {
         "2" "Select Roms and Download" \
         "3" "Download Specfic Games" \
         "4" "Media Library" \
-        "5" "Exit" 3>&1 1>&2 2>&3)
+        "5" "Options" 
+        "6" "About"
+        "7" "Exit" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
             echo "Option 1"
@@ -52,9 +54,14 @@ function advancedMenu {
         4) 
         whiptail --title "Media Downloads" --infobox "With this you will be able to download movies and tv shows found online. Only shows and movies with the traditional https encryption will be availible and a lot will b e lower quality" 8 78
         
+        5) 
+        whiptail --title "Options Menu" --infobox "Not availible yet" 8 7
+        
+        6) 
+        whiptail --title "About" --infobox "This was orignally just meant for my portable pi project, but I might was make this public so here we are" 8 7
         
         
-        5)
+        7)
             cd /home/pi/RomDownloader/Temp
             sudo rm -r *
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
