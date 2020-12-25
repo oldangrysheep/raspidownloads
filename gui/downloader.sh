@@ -1,19 +1,32 @@
 #This is all setup stuff to make sure its all ready
-#add this when extracting https://www.mexchip.com/en/2010/10/how-to-show-a-progress-bar-when-extracting-a-file/
-# https://www.bradgillap.com/guide/post/bash-gui-whiptail-menu-tutorial-series-1 
 if ! [ -x "$(command -v whiptail)" ]; then
   echo "Just installing Dependancies" 
   sudo apt-get install whiptail -y
+  sudo reboot now
 fi
 
 if ! [ -x "$(command -v unzip)" ]; then
   echo "Just installing Dependancies" 
   sudo apt-get install unzip -y
+  sudo reboot now
 fi
 
-sudo mkdir -p /home/pi/RomDownloader/Temp
-sudo mkdir -p /home/pi/RomDownloader/Temp/Roms
-cd /home/pi/RomDownloader/Temp
+DIR="/home/RomDownloader"
+if [ -d "$DIR" ]; then
+  ### Moving Program to new Locaton ###
+  echo "Deleting and removing stuff ${DIR}..."
+  sudo rm -r /home/RomDownloader
+  sudo mkdir /usr/bin/RomDownloader
+  cd /usr/bin/RomDownloader
+  sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
+  sudo chmod +x downloader.sh
+  sudo mkdir -p /usr/bin/RomDownloader/Temp
+  sudo mkdir -p /usr/bin/RomDownloader/Temp/Roms
+  cd /usr/bin/RomDownloader/Temp
+else
+  # congrats theres nothing to do here
+fi
+
 
 function advancedMenu {
     ADVSEL=$(whiptail --title "Rom Downloader" --menu "Choose an option" 15 60 4 \
@@ -21,9 +34,10 @@ function advancedMenu {
         "2" "Select Roms and Download" \
         "3" "Download Specfic Games" \
         "4" "Media Library" \
-        "5" "Options" 
-        "6" "About"
-        "7" "Exit" 3>&1 1>&2 2>&3)
+        "5" "Options" \
+        "6" "About" ]
+		"7" "Update" \
+        "8" "Exit" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
             echo "Option 1"
@@ -52,45 +66,27 @@ function advancedMenu {
         ;;
         
         4) 
-        whiptail --title "Media Downloads" --infobox "With this you will be able to download movies and tv shows found online. Only shows and movies with the traditional https encryption will be availible and a lot will b e lower quality" 8 78
-        
-        #from here on Im seeing if it will work decently if i put it here
-        
-function advancedMenu {
-    ADVSEL=$(whiptail --title "What Do You Want To Download" --menu "Choose an option" 15 60 4 \
-        "1" "Movies" \
-        "2" "Tv" 3>&1 1>&2 2>&3)
-    case $ADVSEL in
-        1)
-        exit    
-        ;;
-        2)
         exit
         ;;
-    esac
-}
-advancedMenu
-
-        ;;
-        
-        
         5) 
         whiptail --title "Options Menu" --infobox "Not availible yet" 8 7
-        ;;
+		;;
         6) 
         whiptail --title "About" --infobox "This was orignally just meant for my portable pi project, but I might was make this public so here we are" 8 7
         ;;
+		
+		7)
+		sudo rm -r *
+		sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
+		sudo chmod +x downloader.sh
+		;;
         
-        7)
-            cd /home/pi/RomDownloader/Temp
-            sudo rm -r *
-            sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
-            sudo chmod +x downloader.sh
-            
-            exit
-            
-            
-            
+        8)
+         #running clean up
+		 sudo rm -r /usr/bin/RomDownloader/Temp/Roms/Items
+		 sudo rm -r all.sh
+		 sudo rm -r setup.sh
+		 #sudo rm -r 
         ;;
         
     esac

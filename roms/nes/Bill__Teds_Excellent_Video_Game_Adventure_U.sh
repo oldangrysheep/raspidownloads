@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/nes
 echo "archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip/nes%2FBill%20%26%20Ted%27s%20Excellent%20Video%20Game%20Adventure%20%28U%29.nes" >> itemlist.txt
 
 

@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/nes
 echo "archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip/nes%2FIke%20Ike%21%20Nekketsu%20Hockey%20Bu%20-%20Subette%20Koronde%20Dai%20Rantou%20%28J%29%20%5BT-Eng0.99%5D.nes" >> itemlist.txt
 
 

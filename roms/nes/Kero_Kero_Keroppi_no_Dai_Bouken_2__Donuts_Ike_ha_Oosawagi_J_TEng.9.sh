@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/nes
 echo "archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip/nes%2FKero%20Kero%20Keroppi%20no%20Dai%20Bouken%202%20-%20Donuts%20Ike%20ha%20Oosawagi%21%20%28J%29%20%5BT-Eng.9%5D.nes" >> itemlist.txt
 
 

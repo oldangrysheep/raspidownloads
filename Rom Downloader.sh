@@ -1,2 +1,3 @@
-cd /home/pi/RomDownloader/Temp
+cd /usr/bin/RomDownloader/Temp
+sudo chmod +x downloader.sh
 sh downloader.sh

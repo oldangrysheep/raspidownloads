@@ -1,5 +1,5 @@
 pwd
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/
 
 # If you cannot understand this, read Bash_Shell_Scripting#if_statements again.
 if (whiptail --title "Are You Sure" --yesno "This will download in the backround. It is not reccomended to start more than one downloading session at a time, as it could affect the download speed" 8 78); then
@@ -16,5 +16,5 @@ sudo wget
 sudo chmod +x startdownloads.sh
 screen -S downloads ./startdownloads.sh
 #And Were Done
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/
-sudo mv /home/pi/RomDownloader/Temp/Roms/Items_To_Download/* /home/pi/RetroPie/roms
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/
+sudo mv /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/* /usr/bin/RetroPie/roms

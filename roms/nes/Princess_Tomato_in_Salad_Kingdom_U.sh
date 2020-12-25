@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/nes
 echo "archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip/nes%2FPrincess%20Tomato%20in%20Salad%20Kingdom%20%28U%29.nes" >> itemlist.txt
 
 

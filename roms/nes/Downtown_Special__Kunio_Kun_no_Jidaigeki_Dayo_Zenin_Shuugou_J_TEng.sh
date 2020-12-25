@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/nes
 echo "archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip/nes%2FDowntown%20Special%20-%20Kunio%20Kun%20no%20Jidaigeki%20Dayo%20Zenin%20Shuugou%21%20%28J%29%20%5BT-Eng%5D.nes" >> itemlist.txt
 
 

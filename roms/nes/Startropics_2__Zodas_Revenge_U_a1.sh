@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/nes
 echo "archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip/nes%2FStartropics%202%20-%20Zoda%27s%20Revenge%20%28U%29%20%5Ba1%5D.nes" >> itemlist.txt
 
 

@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/nes
 echo "archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip/nes%2FMirai%20Senshi%20-%20Lios%20%28J%29%20%5BT-Eng1.00%5D.nes" >> itemlist.txt
 
 

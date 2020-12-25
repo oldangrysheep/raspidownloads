@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/nes
 echo "archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip/nes%2FHyaku%20no%20Sekai%20no%20Monogatari%20-%20The%20Tales%20on%20a%20Watery%20Wilderness%20%28J%29%20%5BT-Eng.99999.837%5D.nes" >> itemlist.txt
 
 

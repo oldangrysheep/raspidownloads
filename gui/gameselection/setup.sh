@@ -1,6 +1,6 @@
-cd /home/pi/RomDownloader/Temp/Roms
+cd /usr/bin/RomDownloader/Temp/Roms
 sudo mkdir -p Items_To_Download
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download
 sudo mkdir -p nes
 sudo mkdir -p snes
 sudo mkdir -p n64
@@ -18,12 +18,12 @@ sudo mkdir -p dreamcast
 sudo mkdir -p psx
 sudo mkdir -p psp
 git clone 
-cd /home/pi/RomDownloader/Temp/Roms/
+cd /usr/bin/RomDownloader/Temp/Roms/
 git clone https://github.com/oldangrysheep/raspidownloads.git
-sudo mv /home/pi/RomDownloader/Temp/Roms/raspidownloads/roms/* /home/pi/RomDownloader/Temp/Roms/
+sudo mv /usr/bin/RomDownloader/Temp/Roms/raspidownloads/roms/* /usr/bin/RomDownloader/Temp/Roms/
 sudo rm -r raspidownloads
 sudo chmod -R +x *.sh
-cd /home/pi/RomDownloader/Temp/
+cd /usr/bin/RomDownloader/Temp/
 sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/gamelist.sh
 sudo chmod +x gamelist.sh
 sudo sh gamelist.sh

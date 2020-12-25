@@ -1,7 +1,7 @@
 #! /bin/bash
 shopt -s nullglob
 dir=`pwd`
-cd /home/pi/RomDownloader/Temp/Roms/megadrive
+cd /usr/bin/RomDownloader/Temp/Roms/megadrive
 arr=(*.sh)
 for ((i=0; i<${#arr[@]}; i++)); do j=$((2*$i+2)); a[j]="${arr[$i]}"; a[j+1]=""; done
 a[0]=""

@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/nes
 echo "archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip/nes%2FGanbare%20Goemon%21%20-%20Karakuri%20Douchuu%20%28J%29%20%5BhFFE%5D%5BT-Eng%5D.nes" >> itemlist.txt
 
 

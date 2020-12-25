@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/nes
 echo "archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip/nes%2FTokkyuu%20Shirei%20-%20Solbrain%20%28J%29%20%5BT-Eng_1.0%5D.nes" >> itemlist.txt
 
 

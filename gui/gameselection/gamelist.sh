@@ -36,63 +36,63 @@ function advancedMenu {
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/nes.sh
             sudo bash ./nes.sh
             sudo rm -r nes.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         4)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/snes.sh
             sudo bash ./snes.sh
             sudo rm -r snes.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         5)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/gb.sh
             sudo bash ./gb.sh
             sudo rm -r gb.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         6)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/gbc.sh
             sudo bash ./gbc.sh
             sudo rm -r gbc.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         7)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/gba.sh
             sudo bash ./gba.sh
             sudo rm -r gba.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         8)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/nes.sh
             sudo bash ./n64.sh
             sudo rm -r nes.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         9)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/nds.sh
             sudo bash ./nds.sh
             sudo rm -r nds.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         10)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/virtualboy.sh
             sudo bash ./virtualboy.sh
             sudo rm -r virtualboy.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         11)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/megadrive.sh
             sudo bash ./megadrive.sh
             sudo rm -r megadrive.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         12)
@@ -100,28 +100,28 @@ function advancedMenu {
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/saturn.sh
             sudo bash ./saturn.sh
             sudo rm -r saturn.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         13)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/dreamcast.sh
             sudo bash ./dreamcast.sh
             sudo rm -r dreamcast.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
         14)
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/psx.sh
             sudo bash ./psx.sh
             sudo rm -r psx.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;  
         15) 
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/gameselection/psp.sh
             sudo bash ./psp.sh
             sudo rm -r psp.sh
-            cd /home/pi/RomDownloader/Temp
+            cd /usr/bin/RomDownloader/Temp
             sudo sh gamelist.sh
         ;;
     esac

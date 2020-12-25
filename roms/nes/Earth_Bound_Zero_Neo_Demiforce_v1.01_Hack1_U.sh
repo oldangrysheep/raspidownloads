@@ -1,4 +1,4 @@
-cd /home/pi/RomDownloader/Temp/Roms/Items_To_Download/nes
+cd /usr/bin/RomDownloader/Temp/Roms/Items_To_Download/nes
 echo "archive.org/download/gb_20201207/Complete%20Rom%20Sets/nes.zip/nes%2FEarth%20Bound%20Zero%20%28Neo%20Demiforce%20v1.01%20Hack-1%29%20%28U%29.nes" >> itemlist.txt
 
 
