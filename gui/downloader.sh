@@ -66,7 +66,9 @@ function advancedMenu {
         ;;
         
         4) 
-        exit
+        sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/media/media.sh
+	sudo chmod +x media.sh
+	sudo sh ./media.sh
         ;;
         5) 
         whiptail --title "Options Menu" --infobox "Not availible yet" 8 7
