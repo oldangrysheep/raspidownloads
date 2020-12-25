@@ -50,7 +50,8 @@ function advancedMenu {
         ;;
         
         4) 
-        exit
+        whiptail --title "Media Downloads" --infobox "With this you will be able to download movies and tv shows found online. Only shows and movies with the traditional https encryption will be availible and a lot will b e lower quality" 8 78
+        
         
         
         5)
