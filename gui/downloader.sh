@@ -20,7 +20,8 @@ function advancedMenu {
         "1" "Download All Roms (Not Recomended 100+ Gigabytes)" \
         "2" "Select Roms and Download" \
         "3" "Download Specfic Games" \
-        "4" "Exit" 3>&1 1>&2 2>&3)
+        "4" "Media Library" \
+        "5" "Exit" 3>&1 1>&2 2>&3)
     case $ADVSEL in
         1)
             echo "Option 1"
@@ -47,7 +48,12 @@ function advancedMenu {
             sudo sh ./setup.sh
             #wget insert here
         ;;
-        4)
+        
+        4) 
+        exit
+        
+        
+        5)
             cd /home/pi/RomDownloader/Temp
             sudo rm -r *
             sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
