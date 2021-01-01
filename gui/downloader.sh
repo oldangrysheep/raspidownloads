@@ -87,18 +87,18 @@ function advancedMenu {
         whiptail --title "About" --infobox "This was orignally just meant for my portable pi project, but I might was make this public so here we are" 8 7
         ;;
 		
-		8)
-		sudo rm -r *
-		sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
-		sudo chmod +x downloader.sh
-		;;
+	8)
+	sudo rm -r *
+	sudo wget https://raw.githubusercontent.com/oldangrysheep/raspidownloads/main/gui/downloader.sh
+	sudo chmod +x downloader.sh
+	;;
         
         9)
-         #running clean up
-		 sudo rm -r /usr/bin/RomDownloader/Temp/Roms/Items
-		 sudo rm -r all.sh
-		 sudo rm -r setup.sh
-		 #sudo rm -r 
+        #running clean up
+	sudo rm -r /usr/bin/RomDownloader/Temp/Roms/Items
+	sudo rm -r all.sh
+	sudo rm -r setup.sh
+	#sudo rm -r 
         ;;
         
     esac
