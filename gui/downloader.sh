@@ -40,8 +40,8 @@ function advancedMenu {
         "2" "Select Roms and Download" \
         "3" "Download Specfic Games" \
         "4" "Media Library" \
-        "5" "Options" \
-		"6" "Save Data" \
+        "5" "Settings" \
+	"6" "Save Data" \
         "7" "About" ]
 		"8" "Update" \
         "9" "Exit" 3>&1 1>&2 2>&3)
@@ -79,10 +79,10 @@ function advancedMenu {
         ;;
         5) 
         whiptail --title "Options Menu" --infobox "Not availible yet" 8 7
-		;;
-		6)
-		exit
-		;;
+	;;
+	6)
+	exit
+	;;
         7) 
         whiptail --title "About" --infobox "This was orignally just meant for my portable pi project, but I might was make this public so here we are" 8 7
         ;;
