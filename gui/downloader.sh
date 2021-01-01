@@ -5,6 +5,12 @@ if ! [ -x "$(command -v whiptail)" ]; then
   sudo reboot now
 fi
 
+if ! [ -x "$(command -v nordvpn)" ]; then
+  echo "Just installing Dependancies" 
+  sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+  sudo reboot now
+fi
+
 if ! [ -x "$(command -v unzip)" ]; then
   echo "Just installing Dependancies" 
   sudo apt-get install unzip -y
